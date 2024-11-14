@@ -1,0 +1,43 @@
+---
+title: Welcome to Javacode
+description: Welcome to Javacode! Here you will find tutorials, guides, and examples of programming in Java, Go, Python, and more. Explore our resources and start learning to code today.
+template: splash
+hero:
+  tagline: Welcome to Javacode! Here you will find tutorials, guides, and examples of programming in Java, Go, Python, and more. Explore our resources and start learning to code today.
+  image:
+    file: ../../../assets/houston.webp
+  actions:
+    - text: Get Started with Java
+      link: /guides/example/
+      icon: right-arrow
+    # - text: GitHub
+    #   link: https://starlight.astro.build
+    #   icon: external
+    #   variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import AllDocs from '../../../components/AllDocs.astro';
+
+## Features of Java
+
+<CardGrid stagger>
+	<Card title="Robust and Secure" icon="seti:lock">
+		Java has an exception management and error handling system that helps build stable and secure applications. Additionally, automated memory management through Garbage Collection reduces the risk of memory errors.
+	</Card>
+	<Card title="Platform Independent" icon="laptop">
+		Thanks to the Java Virtual Machine (JVM), Java code is platform-independent. This means a Java program can run on any operating system with the JVM installed (following the principle of "write once, run anywhere").
+	</Card>
+	<Card title="Object-Oriented" icon="puzzle">
+		Java follows the object-oriented programming (OOP) paradigm, which allows structuring code into objects that represent both data and behavior, facilitating code reuse and maintenance.
+	</Card>
+	<Card title="Multithreading" icon="gitter">
+		Java supports multithreading, allowing multiple tasks to run concurrently within a single program, thereby improving performance in applications requiring multitasking.
+	</Card>
+</CardGrid>
+
+## Documentation
+
+<Card title='Guide Syllabus' icon='open-book'>
+	<AllDocs />
+</Card>
