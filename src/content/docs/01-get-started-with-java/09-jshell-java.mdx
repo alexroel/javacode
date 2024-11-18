@@ -2,3 +2,81 @@
 title: JShell de Java
 description: Aprende a usar JShell, una herramienta de Java que te permite escribir y ejecutar código Java de forma interactiva.
 ---
+
+JDK tambien tiene una herramienta llamada **JShell** que te permite escribir y ejecutar código Java de forma interactiva. Es una excelente herramienta para probar ideas rápidamente, experimentar con nuevas características de Java y aprender el lenguaje.
+
+## ¿Qué es JShell?
+
+**JShell** es una herramienta de línea de comandos que viene incluida en el **JDK 9** y versiones posteriores. Te permite escribir y ejecutar código Java de forma interactiva, sin necesidad de crear un archivo fuente y compilarlo.
+
+Con JShell, puedes:
+
+- Probar fragmentos de código rápidamente.
+- Experimentar con nuevas características de Java.
+- Aprender el lenguaje de forma interactiva.
+- Realizar cálculos matemáticos.
+
+## ¿Cómo usar JShell?
+
+Para abrir JShell, abre una terminal o línea de comandos y escribe `jshell`. Aparecerá un prompt que te permite escribir código Java y ver los resultados al instante.
+
+```bash
+alexroel: ~ ❯ jshell
+|  Welcome to JShell -- Version 21.0.5
+|  For an introduction type: /help intro
+
+jshell> 
+
+```
+
+Ahora puedes escribir código Java directamente en el prompt de JShell. Por ejemplo, puedes escribir una expresión matemática y ver el resultado:
+
+```java
+jshell> 2 + 3
+$1 ==> 5
+jshell> 10 - 2
+$2 ==> 8
+jshell> 4 * 2
+$3 ==> 8
+jshell> 20 / 4
+$4 ==> 5
+jshell> 25 % 10
+$5 ==> 5
+```
+
+JShell asigna un número a cada expresión que escribes (`$1`, `$2`, `$3`, etc.) para que puedas referirte a ellas más adelante. Por ejemplo, puedes usar el resultado anterior en una nueva expresión:
+
+```java
+jshell> $1 * 10
+$2 ==> 50
+```
+
+También puedes definer ejecutar métodos como en el siguiente ejemplo:
+
+```java
+jshell> System.out.println("¡Hola, mundo!");
+¡Hola, mundo!
+```
+
+Tambien puedes usar librerías de Java en JShell. Por ejemplo, puedes importar la clase `Math` y crear una instancia de ella:
+
+```java
+jshell> import java.lang.Math
+jshell> Math.sqrt(25)
+$3 ==> 5.0
+jshell> Math.pow(2, 3)
+$4 ==> 8.0
+```
+
+## Salir de JShell
+
+Para salir de JShell, escribe `/exit` o presiona `Ctrl + D` en tu teclado. Se mostrará un mensaje de despedida y volverás a la línea de comandos.
+
+```bash
+jshell> /exit
+|  Goodbye
+alexroel: ~ ❯
+```
+
+¡Eso es todo! Ahora sabes cómo usar JShell para escribir y ejecutar código Java de forma interactiva. ¡Diviértete experimentando con JShell y aprendiendo Java!
+

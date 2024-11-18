@@ -2,3 +2,68 @@
 title: Compilación y ejecución
 description: Aprende a compilar y ejecutar programas Java en tu sistema operativo.
 ---
+
+import { Steps, FileTree } from '@astrojs/starlight/components';
+
+Hasta ahora, has aprendido qué es Java, cómo funciona y qué necesitas para empezar a programar y tambien emos creado un programa simple en Java utilizando un IDE. Ahora, vamos a ver cómo compilar y ejecutar programas Java directamente desde la línea de comandos de tu sistema operativo.
+
+## Compilación y ejecución de código Java
+
+El proceso de crear y ejecutar un programa en Java tiene tres pasos principales: 
+
+<Steps>
+
+1. **Creación de un código fuente en Java:** 
+    Todo comienza escribiendo el código fuente en un archivo con extensión **`.java`**. Este código contiene las instrucciones que queremos que nuestra computadora ejecute. Por ejemplo:
+
+    Dentro de un carpeta llamada **`CompiloJava`**, creamos un archivo llamado **`HolaMundo.java`** con el siguiente contenido:
+
+    <FileTree>
+    - CompiloJava/
+        - **HolaMundo.java**
+    </FileTree>
+
+    Dentro de **`HolaMundo.java`** escribimos el siguiente código:
+
+    ```java
+    public class HolaMundo {
+        public static void main(String[] args) {
+            System.out.println("¡Hola, mundo!");
+        }
+    }
+    ```
+
+2. **Compilación del código fuente en bytecode:** 
+    Después de escribir el código, debemos compilarlo a bytecode y esta será interpretada por la Máquina Virtual de Java (JVM).
+
+    El compilador de Java, llamado **`javac`**, toma nuestro archivo **`.java`** y lo transforma en un archivo con extensión **`.class`**. Por ejemplo:
+
+    ```bash
+    javac HolaMundo.java
+    ```
+
+    Esto genera un archivo llamado **`HolaMundo.class`** que contiene el bytecode, un conjunto de instrucciones que no están vinculadas a ningún sistema operativo específico.
+
+    <FileTree>
+    - CompiloJava/
+        - HolaMundo.java
+        - **HolaMundo.class**
+    </FileTree>
+
+3. **Ejecución del bytecode en la Máquina Virtual de Java (JVM)**
+    El bytecode por sí solo no puede ejecutarse directamente en la computadora. Necesitamos una "traductora", que es la **Máquina Virtual de Java (JVM)**.
+
+    Cuando ejecutamos el programa usando el comando:
+
+    ```bash
+    java HolaMundo
+    ```
+
+    La JVM interpreta el bytecode contenido en **`HolaMundo.class`** y lo traduce en instrucciones específicas para el sistema operativo donde se está ejecutando. Finalmente, el programa muestra el resultado:
+
+    ```
+    ¡Hola, mundo!
+    ```
+</Steps>
+
+Felicitaciones, has compilado y ejecutado tu primer programa en Java sin utilizar un IDE. Ahora puedes ver el resultado en la consola de tu sistema operativo.
