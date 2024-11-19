@@ -3,4 +3,115 @@ title: Entrada de datos
 description: Aprende a leer datos desde la consola en Java.
 ---
 
-## Entrada de datos en Java
+Cuando desarrollamos programas en Java, a menudo necesitamos obtener datos del usuario para realizar cálculos, tomar decisiones o simplemente interactuar. La clase `Scanner` de Java es una herramienta sencilla y poderosa para leer datos desde el teclado, que es una de las formas más comunes de entrada estándar en la consola.
+
+**Introducción a la Clase Scanner**
+
+La clase `Scanner`, parte del paquete `java.util`, permite leer diferentes tipos de datos desde diversas fuentes, incluida la entrada estándar (`System.in`). Con `Scanner`, podemos capturar texto, números y otros valores de una manera eficiente y fácil de usar.
+
+## Importar la Clase Scanner
+
+Antes de usar la clase `Scanner`, es necesario importarla en nuestro programa. Esto se hace al principio del archivo con la siguiente línea:
+
+```java
+import java.util.Scanner;
+```
+
+## Cómo Crear un Objeto Scanner
+
+Para comenzar a usar `Scanner`, debemos crear un objeto de esta clase, indicando la fuente de entrada. En el caso de la entrada estándar (teclado), utilizamos `System.in`.
+
+```java
+Scanner scanner = new Scanner(System.in);
+```
+
+## Lectura de Diferentes Tipos de Datos
+
+Con el objeto `Scanner`, podemos leer diferentes tipos de datos de entrada. Los métodos más comunes incluyen:
+
+### Leer Cadenas de Texto
+- **`next()`**: Lee la siguiente palabra (hasta un espacio o salto de línea).  
+- **`nextLine()`**: Lee una línea completa de texto, incluyendo espacios.
+
+**Ejemplo:**
+```java
+System.out.print("Ingresa tu nombre: ");
+String nombre = scanner.nextLine(); // Captura una línea completa
+```
+
+---
+
+### Leer Números Enteros
+- **`nextInt()`**: Captura el siguiente número entero en la entrada.
+
+**Ejemplo:**
+```java
+System.out.print("Ingresa tu edad: ");
+int edad = scanner.nextInt(); // Captura un número entero
+```
+
+---
+
+### Leer Números Decimales
+- **`nextDouble()`**: Captura un número en formato decimal (double).  
+- **`nextFloat()`**: Captura un número en formato flotante (float).
+
+**Ejemplo:**
+```java
+System.out.print("Ingresa tu altura (en metros): ");
+double altura = scanner.nextDouble(); // Captura un número decimal
+```
+
+## lectura de todos los tipos de datos
+
+| **Tipo de Dato**       | **Método del Scanner** | **Descripción**                                                                                  | **Ejemplo de Uso**                          |
+|-------------------------|------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------|
+| **Texto (palabra)**     | `next()`              | Lee la siguiente palabra hasta un espacio en blanco o salto de línea.                           | `String palabra = scanner.next();`         |
+| **Texto (línea completa)** | `nextLine()`          | Lee toda una línea de texto, incluyendo espacios, hasta encontrar un salto de línea.             | `String linea = scanner.nextLine();`       |
+| **Número entero**       | `nextInt()`           | Lee el siguiente número entero (`int`).                                                         | `int numero = scanner.nextInt();`          |
+| **Número largo**        | `nextLong()`          | Lee el siguiente número largo (`long`).                                                         | `long largo = scanner.nextLong();`         |
+| **Número flotante**     | `nextFloat()`         | Lee el siguiente número en formato de coma flotante (`float`).                                   | `float flotante = scanner.nextFloat();`    |
+| **Número decimal**      | `nextDouble()`        | Lee el siguiente número decimal en formato doble precisión (`double`).                          | `double decimal = scanner.nextDouble();`   |
+| **Número corto**        | `nextShort()`         | Lee el siguiente número corto (`short`).                                                        | `short corto = scanner.nextShort();`       |
+| **Número en byte**      | `nextByte()`          | Lee el siguiente número en formato byte (`byte`).                                               | `byte b = scanner.nextByte();`             |
+| **Booleano**            | `nextBoolean()`       | Lee un valor booleano (`true` o `false`).                                                       | `boolean bool = scanner.nextBoolean();`    |
+
+## Ejemplo práctico
+
+A continuación, un ejemplo práctico que utiliza `Scanner` para leer datos de diferentes tipos.
+
+```java
+import java.util.Scanner;
+
+public class EntradaDatos {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Leer una cadena de texto
+        System.out.print("Ingresa tu nombre: ");
+        String nombre = scanner.nextLine();
+
+        // Leer un número entero
+        System.out.print("Ingresa tu edad: ");
+        int edad = scanner.nextInt();
+
+        // Leer un número decimal
+        System.out.print("Ingresa tu altura (en metros): ");
+        double altura = scanner.nextDouble();
+
+        // Leer un valor booleano
+        System.out.print("¿Te gusta programar? (true/false): ");
+        boolean gustaProgramar = scanner.nextBoolean();
+
+        // Mostrar datos capturados
+        System.out.println("\nResumen de datos ingresados:");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
+        System.out.println("Altura: " + altura + " metros");
+        System.out.println("¿Le gusta programar?: " + gustaProgramar);
+
+        // Cerrar el scanner
+        scanner.close();
+    }
+}
+```

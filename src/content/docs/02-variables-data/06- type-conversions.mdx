@@ -4,4 +4,215 @@ description: Aprende a convertir tipos de datos en Java.
 
 ---
 
-## Conversión de tipos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+En Java, la conversión de tipos de datos es un proceso fundamental que nos permite cambiar un tipo de dato a otro. Esta acción se puede realizar de forma explícita (cuando le indicamos al programa cómo convertir un tipo) o implícita (cuando el programa lo hace automáticamente). En este artículo, exploraremos los dos tipos de conversión de datos más comunes y cómo usarlos de manera efectiva en tus programas.
+
+## Tipos de Conversión en Java
+
+En Java, los tipos de datos pueden ser de dos categorías principales:
+
+    - Tipos primitivos: como int, double, char, boolean, etc (Automática).
+    - Tipos de referencia: como objetos de clases, arrays, etc (Manual).
+
+### Conversión Implícita (Automática)
+
+La conversión implícita ocurre cuando Java convierte un tipo de dato de **menor tamaño** o **menor precisión** a un tipo de dato de **mayor tamaño** o **mayor precisión**, **de forma automática**. Este proceso se llama **conversión implícita** o **upcasting**.
+
+Por ejemplo, si tienes un número entero y lo asignas a una variable de tipo `double`, Java hará la conversión automáticamente:
+
+```java
+int numeroEntero = 5;
+double numeroDecimal = numeroEntero; // Conversión automática de int a double
+System.out.println(numeroDecimal);  // Salida: 5.0
+```
+
+Aquí, el tipo `int` (número entero) se convierte automáticamente a `double` (número decimal) sin que sea necesario especificarlo, ya que `double` puede contener más precisión que un `int`.
+
+### Conversión Explícita (Manual)
+
+La conversión explícita, también conocida como **casting** o **downcasting**, se realiza cuando queremos convertir un tipo de dato de **mayor tamaño** o **mayor precisión** a uno de **menor tamaño** o **menor precisión**. En este caso, Java no lo hace automáticamente, y debemos **especificar** la conversión. Para ello, usamos paréntesis con el tipo al que queremos convertir.
+
+Por ejemplo, si intentas convertir un número decimal (`double`) a un número entero (`int`), deberás hacerlo de forma explícita:
+
+```java
+double numeroDecimal = 5.99;
+int numeroEntero = (int) numeroDecimal; // Conversión explícita de double a int
+System.out.println(numeroEntero);  // Salida: 5
+```
+
+En este caso, la parte decimal del número (`0.99`) se pierde al convertirlo a `int`, porque el tipo `int` solo puede almacenar números enteros. Este tipo de conversión puede perder datos, por lo que debes tener cuidado al usarla.
+
+## Tipos de Conversión Comunes
+
+A continuación, veremos algunos ejemplos de conversiones comunes entre los tipos de datos primitivos en Java:
+
+- **De `int` a `double`:** La conversión implícita se realiza automáticamente.
+  ```java
+  int numeroEntero = 10;
+  double numeroDecimal = numeroEntero;  // Conversión implícita
+  ```
+
+- **De `double` a `int`:** Se necesita una conversión explícita.
+  ```java
+  double numeroDecimal = 7.89;
+  int numeroEntero = (int) numeroDecimal;  // Conversión explícita
+  ```
+
+- **De `char` a `int`:** El tipo `char` se puede convertir a un valor numérico, ya que `char` es un valor basado en Unicode.
+  ```java
+  char letra = 'A';
+  int codigoUnicode = (int) letra;  // Conversión explícita
+  System.out.println(codigoUnicode);  // Salida: 65 (código Unicode de 'A')
+  ```
+
+## Conversión entre String y Integer
+
+En Java, a menudo es necesario convertir entre tipos de datos `String` e `Integer`. Esto puede ser útil cuando se están trabajando con entradas de usuario o leyendo valores de archivos.
+
+**Integer a String (viceversa)**
+
+Para convertir un valor `Integer` a un `String`, puedes usar el método `toString()` o concatenar el número con una cadena vacía. Para convertir un `String` a un `Integer`, puedes usar el método `parseInt()`.
+
+Ejemplo de Integer a String:
+
+```java
+int numero = 100;
+String numeroComoString = Integer.toString(numero); // O también puedes hacer: String numeroComoString = "" + numero;
+```
+
+Ejemplo de String a Integer:
+
+```java
+String numeroString = "200";
+int numeroInt = Integer.parseInt(numeroString);
+```
+
+En Java, la conversión de **tipos primitivos** a objetos de tipo `Integer` o `String` es una operación común, especialmente cuando trabajas con colecciones como listas, donde los datos deben estar en formato de objeto, o cuando necesitas representar datos numéricos como texto.
+
+---
+
+## Conversión de Tipos Primitivos a Integer
+
+La clase `Integer` es parte del paquete `java.lang` y proporciona métodos útiles para trabajar con números enteros como objetos. Para convertir un tipo primitivo (como `int`) a un objeto de tipo `Integer`, puedes usar **autoboxing** o el método `Integer.valueOf()`.
+
+**Autoboxing (Conversión Implícita)**
+
+El autoboxing permite que Java convierta automáticamente un valor de tipo primitivo a su objeto envolvente (`wrapper class`).
+
+```java
+int numeroPrimitivo = 10;
+Integer numeroObjeto = numeroPrimitivo; // Conversión implícita
+```
+
+**Método Integer.valueOf()**
+
+El método `valueOf()` convierte explícitamente un valor primitivo a un objeto de tipo `Integer`.
+
+```java
+int numeroPrimitivo = 25;
+Integer numeroObjeto = Integer.valueOf(numeroPrimitivo); // Conversión explícita
+```
+
+## Conversión de Tipos Primitivos a String
+
+Para convertir un valor primitivo a un `String`, hay varias opciones en Java. Esto es útil cuando deseas representar datos numéricos en forma de texto.
+
+**Uso del Método String.valueOf()**
+
+El método `String.valueOf()` es una forma segura y eficiente de convertir cualquier valor primitivo a un `String`.
+
+```java
+int numeroPrimitivo = 42;
+String numeroComoTexto = String.valueOf(numeroPrimitivo);
+```
+
+**Uso del Método Integer.toString()**
+
+Si el tipo primitivo es un número entero (`int`), también puedes usar el método `Integer.toString()`.
+
+```java
+int numeroPrimitivo = 42;
+String numeroComoTexto = Integer.toString(numeroPrimitivo);
+```
+
+## Integer y String a Tipos Primitivos
+
+Para convertir de `String` a un tipo primitivo, como `int` o `double`, se utilizan los métodos `parseInt()` o `parseDouble()`.
+
+Ejemplo de conversión de String a int:
+
+```java
+String numeroString = "100";
+int numero = Integer.parseInt(numeroString); // Convierte un String a un tipo primitivo int
+```
+
+Si se necesita convertir un `String` a `double`, se puede hacer de esta forma:
+
+```java
+String numeroString = "99.99";
+double numero = Double.parseDouble(numeroString); // Convierte un String a un tipo primitivo double
+```
+
+## Consideraciones al Realizar la Conversión
+
+Cuando realizamos conversiones de tipos de datos, es importante tener en cuenta ciertos factores para evitar errores y problemas con el programa.
+
+**Pérdida de Datos**
+
+Al realizar conversiones explícitas entre tipos, especialmente cuando se convierte de un tipo mayor a uno menor (como de `double` a `int`), existe la posibilidad de perder datos, como la parte decimal. Siempre que realices este tipo de conversión, asegúrate de que la pérdida de datos sea aceptable para tu aplicación.
+
+**Excepciones**
+
+Al convertir de `String` a tipos primitivos como `int` o `double`, es posible que se produzcan excepciones si el `String` no contiene un número válido. Por ejemplo, si intentas convertir `"abc"` a un `int`, obtendrás una excepción `NumberFormatException`.
+
+Ejemplo de excepción:
+
+```java
+String valorString = "abc";
+int numero = Integer.parseInt(valorString); // Esto lanzará NumberFormatException
+```
+
+Para evitar este tipo de problemas, es recomendable usar bloques `try-catch` para manejar las excepciones de forma adecuada.
+
