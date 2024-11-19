@@ -3,4 +3,135 @@ title: Salida de datos
 description: Aprende a mostrar datos en la consola en Java.
 ---
 
-## Salida de datos en Java
+La salida de datos en Java es una parte fundamental para interactuar con el usuario y mostrar información. En este artículo exploraremos las formas principales de salida de datos: **salida estándar simple**, **salida con formato**, y el uso de **`System.err`** para mensajes de error.
+
+
+## Salida Estándar Simple
+
+La salida estándar en Java se realiza mediante las clases y métodos de la biblioteca estándar. Los métodos más comunes son `System.out.print` y `System.out.println`.
+
+**Ejemplo:**
+
+```java
+System.out.print("Hola mundo"); // Imprime el mensaje sin salto de línea.
+System.out.println("Hola mundo"); // Imprime el mensaje seguido de un salto de línea.
+```
+
+**Diferencia clave:**
+- `print` no añade un salto de línea.
+- `println` incluye un salto de línea automático al final del mensaje.
+
+
+## Salida con Formato
+
+Para mostrar datos de manera estructurada y personalizada, Java ofrece el método `System.out.printf` y la clase `String.format`. Estas herramientas utilizan especificadores de formato para incorporar variables en una cadena.
+
+**Ejemplo sin formato:**
+
+```java
+Scanner scanner = new Scanner(System.in);
+
+System.out.print("Ingresa tu nombre: ");
+var nombre = scanner.nextLine();
+
+System.out.print("Ingresa tu edad: ");
+var edad = scanner.nextInt();
+
+System.out.println("Hola " + nombre + ", tienes " + edad + " años");
+```
+
+**Ejemplo con formato:**
+
+```java
+Scanner scanner = new Scanner(System.in);
+
+System.out.print("Ingresa tu nombre: ");
+var nombre = scanner.nextLine();
+
+System.out.print("Ingresa tu edad: ");
+var edad = scanner.nextInt();
+
+// Usando printf para mostrar datos con formato
+System.out.printf("Hola %s, tienes %d años\n", nombre, edad);
+
+// Usando String.format para crear una cadena con formato
+String mensaje = String.format("Hola %s, tienes %d años", nombre, edad);
+System.out.println(mensaje);
+```
+
+
+## Especificadores Comunes
+
+Los especificadores de formato son códigos que indican cómo deben mostrarse las variables en la salida. Algunos de los más usados son:
+
+| Especificador | Descripción              | Ejemplo           |
+|---------------|--------------------------|-------------------|
+| `%s`          | Cadena de texto          | `"Hola"`          |
+| `%d`          | Entero decimal           | `123`             |
+| `%f`          | Número de punto flotante | `3.14159`         |
+| `%c`          | Carácter                 | `'A'`             |
+| `%b`          | Booleano                 | `true` o `false`  |
+
+**Ejemplo:**
+
+```java
+System.out.printf("Valor entero: %d, valor flotante: %.2f, cadena: %s\n", 42, 3.14, "ejemplo");
+```
+
+
+## Especificadores Adicionales
+
+Además de los especificadores básicos, puedes ajustar cómo se presenta la información:
+
+- **Longitud mínima de campo:** Controla el espacio ocupado por un valor.  
+  Ejemplo: `"%10s"` ajusta a 10 caracteres.
+
+- **Alineación:**  
+  - Izquierda: `%-10s`  
+  - Derecha (predeterminado): `%10s`
+
+- **Precisión:** Aplica a números de punto flotante.  
+  Ejemplo: `"%.2f"` muestra dos decimales.
+
+#### Ejemplo con ajustes:
+
+```java
+System.out.printf("|%10s|%-10s|\n", "Derecha", "Izquierda");
+System.out.printf("Número con 3 decimales: %.3f\n", 3.14159);
+```
+
+## Caracteres especiales
+
+Java permite incluir caracteres especiales en las cadenas de formato para controlar la salida:
+
+- `\n`: Salto de línea.
+- `\t`: Tabulación.
+- `\\`: Carácter de escape.
+- `\"`: Comillas dobles.
+- `\'`: Comillas simples.
+
+**Ejemplo:**
+
+```java
+System.out.printf("Primera línea\nSegunda línea\n");
+System.out.printf("Texto con tabulación:\t\tFinal\n");
+System.out.printf("Caracteres de escape: \\ \" \' \n");
+```
+
+## Uso de `System.err`
+
+Java incluye un flujo separado para errores mediante `System.err`. Este flujo permite enviar mensajes de error o advertencia que pueden ser redirigidos a otro destino (como un archivo) sin mezclarlo con la salida estándar.
+
+**Ejemplo:**
+
+```java
+System.out.println("Este es un mensaje estándar.");
+System.err.println("Este es un mensaje de error.");
+```
+
+Esto es útil para distinguir entre información normal y errores en el contexto de aplicaciones más grandes.
+
+
+## Conclusión
+
+La salida de datos en Java es flexible y poderosa, permitiendo desde impresiones simples hasta salidas formateadas y manejo diferenciado de errores. Dominar estas herramientas es esencial para desarrollar aplicaciones claras y bien estructuradas.

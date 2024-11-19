@@ -1,4 +1,103 @@
 ---
-title: Proyecto de sección - Precio de venta
+title: Proyecto - Precio de venta
 description: Proyecto de sección para calcular el precio de venta de un producto.
 ---
+
+En este proyecto, vamos a aplicar los conceptos aprendidos en la sección de **Variables y Datos** para calcular el precio de venta de un producto.
+
+## Descripción
+
+Imagina que tienes una tienda en línea y deseas calcular el precio de venta de un producto. Para ello, necesitas considerar los siguientes factores:
+    - **Valor de venta**: el precio del producto sin aplicar los impuestos.
+    - **Impuestos**: el porcentaje de impuestos que debes aplicar al precio de venta. En este caso, el impuesto es del 18%.
+
+El precio de venta se calcula de la siguiente manera:
+    
+    ```
+    Precio de Venta = Costo de Producción + (Costo de Producción * Impuestos)
+    ```
+
+## Requerimientos
+
+Para completar este proyecto, necesitarás:
+
+- Crear un programa en Java que solicite al usuario el valor de venta del producto.
+- Calcular el impuesto (18%) a aplicar al valor de venta.
+- Calcular el precio de venta del producto.
+- Mostrar el costo de producción, el impuesto y el precio de venta en la consola.
+
+**Ejemplo: **
+
+```bash
+Ingrese el valor de venta: 100
+Boleta de Venta 
+=============================
+Valor de Venta: S/. 100,00
+IGV: S/. 18,00
+----------------------------
+Precio de Venta: S/. 118,00
+=============================
+```
+
+## Solución
+
+Para resolver este problema, necesitamos seguir los siguientes pasos:
+
+1. Solicitar al usuario el costo de producción.
+2. Calcular el impuesto (18%).
+3. Calcular el precio de venta.
+4. Mostrar los resultados en la consola.
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+  <TabItem label="Código" icon='laptop'>
+        ```java 
+        import java.util.Scanner;
+
+        public class PrecioVenta {
+            public static void main(String[] args) {
+                // Importar la clase Scanner
+                var leer = new Scanner(System.in);
+
+                // Ingrese el costo de producto
+                System.out.print("Ingrese el valor de venta: ");
+                var valorVenta = leer.nextDouble();
+
+                // Calcular el impuesto
+                var igv = valorVenta * 0.18;
+                // Calcular precio de venta
+                var precioVenta = valorVenta + igv;
+
+                // Salida de datos
+                System.out.println("Boleta de Venta " +
+                        "\n=============================");
+                System.out.printf("Valor de Venta: S/. %.2f\n", valorVenta);
+                System.out.printf("IGV: S/. %.2f\n", igv);
+                System.out.println("----------------------------");
+                System.out.printf("Precio de Venta: S/. %.2f\n", precioVenta);
+                System.out.println("=============================");
+
+            }
+        }
+        ```
+  </TabItem>
+  <TabItem label="Salida" icon='seti:powershell'>
+    ```
+    Ingrese el valor de venta: 145
+    Boleta de Venta 
+    =============================
+    Valor de Venta: S/. 145,00
+    IGV: S/. 26,10
+    ----------------------------
+    Precio de Venta: S/. 171,10
+    =============================
+    ```
+  </TabItem>
+</Tabs>
+
+Felicitaciones, has completado el proyecto de sección. Ahora puedes calcular el precio de venta de un producto en tu tienda en línea. ¡Sigue adelante!
+
+
+
+

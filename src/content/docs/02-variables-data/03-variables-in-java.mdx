@@ -4,9 +4,94 @@ description: Aprende a declarar y utilizar variables en Java.
 
 ---
 
-## Cómo se declaran las variables en Java
+Las **variables** en Java son importantes para guardar información que necesitas en tu programa. En este artículo, aprenderás cómo declarar variables en Java y algunas reglas para nombrarlas.
+
+## Cómo se declaran las variables en Java  
+
+Para declarar una variable en Java, necesitas seguir esta fórmula:  
+
+```java
+tipo nombre = valor;
+```  
+
+- **tipo**: Esto indica qué tipo de información guardarás. Ejemplo: números, texto, etc.  
+- **nombre**: Es el nombre que le das al "cajón".  
+- **valor**: Es la información que guardas.  
+
+Ejemplo:
+Podemos declarar una variable para guardar la edad de una persona y otra para guardar su nombre. Para este jemplo usaremos JShell, una herramienta de Java que te permite probar código rápidamente, Pero eres libre de usar cualquier IDE de tu preferencia.  
+
+```java
+int edad = 12; // Variable para guardar la edad.
+//edad ==> 12
+
+String nombre = "Juan"; // Variable para guardar el nombre.
+// nombre ==> "Juan"
+```
+
+En el ejemplo anterior, declaramos dos variables: `edad` y `nombre`. La variable `edad` es de tipo `int` (número entero) y tiene un valor de `12`. La variable `nombre` es de tipo `String` (texto) y tiene un valor de `"Juan"`.
+
+Usa `System.out.println()` para imprimir el valor de una variable en la consola. O si estas usando JShell, solo escribe el nombre de la variable y presiona Enter.  
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+  <TabItem label="Código" icon='laptop'>
+    ```java
+    System.out.println(edad); // Imprime el valor de la variable edad.
+    ```
+  </TabItem>
+  <TabItem label="Salida" icon='seti:powershell'>
+    ```
+    12
+    ```
+  </TabItem>
+</Tabs>
+
+## Nueva forma de declarar variables en Java 10  
+
+Desde Java 10, hay una forma más sencilla de declarar variables con la palabra clave `var`. Java adivina automáticamente el tipo de dato según el valor que guardes.  
+
+Ejemplo:  
+
+```java
+var edad = 12; // Java sabe que es un número entero.
+var nombre = "Alex"; // Java sabe que es texto.
+```  
+
+**Nota importante**: Aunque `var` hace las cosas más fáciles, debes usarlo solo cuando el tipo de dato sea obvio para que tu código sea más claro.  
+
+## Usando variable en "Hola Mundo"
+
+Vamos a modificar el clásico "Hola Mundo" para que use variables.  
+
+<Tabs>
+  <TabItem label="Código" icon='laptop'>
+    ```java
+    public class HolaMundo {
+        public static void main(String[] args) {
+            String saludo = "¡Hola Mundo!";
+            System.out.println(saludo);
+        }
+    }
+    ```
+  </TabItem>
+  <TabItem label="Salida" icon='seti:powershell'>
+    ```
+    ¡Hola Mundo!
+    ```
+  </TabItem>
+</Tabs>
 
 
-## Nueva forma de declarar variables en Java 10
+## Nomenclatura de variables en Java  
 
-## Nomenclatura de variables en Java
+Es importante dar nombres claros y fáciles de entender a tus variables. Aquí hay algunas reglas y consejos:  
+
+1. **Usa letras, números, _ (guión bajo) y $ (signo de dólar)**.  
+   Ejemplo: `miVariable`, `edad_usuario`.  
+2. **No empieces con un número**. Esto es incorrecto: `1nombre`.  
+3. **Usa camelCase**: Escribe la primera palabra en minúscula y las siguientes con mayúscula. Ejemplo: `nombreCompleto`, `numeroDeEstudiantes`.  
+4. **Que el nombre sea descriptivo**: Es mejor usar `edad` que `x`, porque es más fácil entender para qué sirve.  
+
+Con estos apuntes, ¡ya sabes lo básico para trabajar con variables en Java! 🎉

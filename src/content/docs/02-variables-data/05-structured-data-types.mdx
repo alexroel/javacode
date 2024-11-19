@@ -4,10 +4,83 @@ description: Aprende sobre los tipos de datos estructurados en Java y cómo se u
 
 ---
 
+En Java, además de los **tipos de datos primitivos**, existen **tipos de datos estructurados**, que son más complejos y permiten manejar información de manera más organizada o con funcionalidades adicionales. Entre los más comunes se encuentran las **cadenas de texto**, **Vectores o arrays**,los **tipos envoltorio** (también llamados *wrappers*) y **Tipos definidos por los usuarios**.
 
-## Tipos de datos estructurados en Java
+## 1. **Cadenas de Texto**
 
+Una **cadena de texto** es una secuencia de caracteres, como palabras, frases o incluso párrafos. En Java, las cadenas se manejan utilizando la clase `String`.
 
-## Cadenas de texto
+### Características de las cadenas en Java:
+- **Inmutables:** Una vez creada, una cadena no puede cambiarse. Si modificas una cadena, Java crea una nueva instancia.
+- **Métodos útiles:** La clase `String` proporciona muchas funciones para manipular texto.
 
-## Tipos envoltorio o wrapper
+### Cómo usar cadenas de texto
+Las cadenas se declaran y utilizan de la siguiente manera:
+
+```java
+
+String saludo = "Hola, mundo!";
+System.out.println(saludo); // Muestra: Hola, mundo!
+
+// Métodos comunes
+System.out.println(saludo.length()); // Muestra: 12 (número de caracteres)
+System.out.println(saludo.toUpperCase()); // Muestra: HOLA, MUNDO!
+```
+
+### Operaciones con cadenas:
+1. **Concatenación:** Combina dos cadenas.
+   ```java
+   String nombre = "Juan";
+   String apellido = "Pérez";
+   String nombreCompleto = nombre + " " + apellido;
+   System.out.println(nombreCompleto); // Muestra: Juan Pérez
+   ```
+
+2. **Comparación:** Compara dos cadenas.
+   ```java
+   String a = "Hola";
+   String b = "hola";
+   System.out.println(a.equals(b)); // Muestra: false (mayúsculas importan)
+   System.out.println(a.equalsIgnoreCase(b)); // Muestra: true (ignora mayúsculas)
+   ```
+
+## 2. **Tipos Envoltorio o Wrapper**
+
+Los **tipos envoltorio** son clases que permiten trabajar con valores primitivos como si fueran objetos. Esto es útil cuando necesitamos usar características avanzadas, como trabajar con colecciones (listas, mapas, etc.) que requieren objetos y no tipos primitivos.
+
+### Tipos envoltorio en Java
+
+| Tipo Primitivo | Tipo Envoltorio | Ejemplo de uso          |
+|----------------|----------------|-------------------------|
+| `int`          | `Integer`      | `Integer numero = 10;`  |
+| `double`       | `Double`       | `Double decimal = 3.14;`|
+| `boolean`      | `Boolean`      | `Boolean verdad = true;`|
+| `char`         | `Character`    | `Character letra = 'A';`|
+
+### Características principales:
+1. **Son objetos:** A diferencia de los tipos primitivos, los envoltorios son clases y tienen métodos.
+2. **Boxing y Unboxing:**
+   - **Boxing:** Convertir un tipo primitivo en su tipo envoltorio.
+   - **Unboxing:** Extraer el valor primitivo de un tipo envoltorio.
+
+### Ejemplo de tipos envoltorio:
+
+```java
+// Boxing (primero a envoltorio)
+Integer numero = 20;
+Double pi = 3.1416;
+Boolean esJavaGenial = true;
+
+// Métodos útiles
+System.out.println(numero.toString()); // Muestra: "20"
+System.out.println(pi.intValue()); // Muestra: 3 (convierte a entero)
+System.out.println(esJavaGenial.equals(false)); // Muestra: false
+
+// Unboxing (envoltorio a primitivo)
+int numeroPrimitivo = numero;
+System.out.println(numeroPrimitivo); // Muestra: 20
+```
+
+## Conclusión
+
+Los **tipos estructurados** como las **cadenas** y los **tipos envoltorio** son esenciales para trabajar con datos más complejos en Java. Las cadenas son perfectas para manejar texto, mientras que los tipos envoltorio permiten usar primitivos en contextos más avanzados. ¡Practica con estos ejemplos para entenderlos mejor y empezar a usarlos en tus proyectos! 🚀
