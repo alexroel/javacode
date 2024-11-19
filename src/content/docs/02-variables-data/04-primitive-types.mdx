@@ -4,10 +4,152 @@ description: Aprende sobre los tipos de datos primitivos en Java y cómo se util
 
 ---
 
-## Tipos de datos primitivos en Java
+Cuando comienzas a programar en Java, uno de los conceptos básicos que debes entender son los **tipos de datos primitivos**. Estos son los bloques fundamentales que Java utiliza para manejar datos simples como números, caracteres y valores booleanos. ¡No te preocupes! Vamos a explicarlos de manera sencilla para que los entiendas rápidamente.
 
 
-## Tipos numéricos
+## ¿Qué son los tipos de datos primitivos?
 
-## Tipos enteros
+Los **tipos de datos primitivos** son los tipos de datos más básicos en Java. No son objetos ni tienen métodos especiales; simplemente contienen valores simples como un número o una letra. Java tiene **8 tipos primitivos** que se dividen en cuatro categorías:
 
+1. **Números enteros** (sin decimales).
+2. **Números decimales** (con decimales).
+3. **Caracteres**.
+4. **Valores booleanos** (verdadero o falso).
+
+---
+
+## 1. **Números enteros**
+
+Estos tipos se usan para almacenar números enteros (sin decimales). 
+
+| Tipo  | Tamaño (bits) | Rango de valores            | Ejemplo  |
+|-------|---------------|-----------------------------|----------|
+| `byte`| 8             | -128 a 127                 | `byte edad = 25;` |
+| `short`| 16           | -32,768 a 32,767           | `short año = 2024;` |
+| `int` | 32            | -2,147,483,648 a 2,147,483,647 | `int distancia = 1500;` |
+| `long`| 64            | Muy grande, ¡casi infinito!| `long estrellas = 9223372036854775807L;` |
+
+
+:::note
+Si usas `long`, recuerda agregar una `L` al final del número.
+
+```java
+long estrellas = 9223372036854775807L;
+```
+:::
+
+## 2. **Números decimales**
+
+Estos se usan cuando necesitas trabajar con números con decimales, como 3.14 o 0.001.
+
+| Tipo      | Tamaño (bits) | Precisión (decimales) | Ejemplo         |
+|-----------|---------------|-----------------------|-----------------|
+| `float`   | 32            | Aproximadamente 7    | `float peso = 68.5f;` |
+| `double`  | 64            | Aproximadamente 15   | `double pi = 3.1415926535;` |
+
+> **Nota:** Los números de tipo `float` deben terminar con una `f`.
+
+:::note
+Los números de tipo `float` deben terminar con una `f`.
+
+```java
+float peso = 68.5f;
+```
+:::
+
+## 3. **Caracteres**
+
+Para almacenar un solo carácter (letra, número, símbolo), utilizamos el tipo `char`.
+
+- **Tamaño:** 16 bits.
+- **Rango:** Puede almacenar cualquier carácter Unicode.
+
+```java
+char inicial = 'A';
+char simbolo = '$';
+```
+
+:::tip[Ten en cuenta]
+Los valores de `char` siempre van entre comillas simples `'`.
+    
+```java
+char inicial = 'A';
+char simbolo = '$';
+```
+:::
+
+
+## 4. **Valores booleanos**
+
+Un tipo booleano solo puede tener **dos valores**: `true` (verdadero) o `false` (falso). Este tipo es útil para tomar decisiones en tu programa.
+
+```java
+boolean esMayorDeEdad = true;
+boolean estaLloviendo = false;
+```
+
+:::note
+No uses comillas para los valores `true` y `false`.
+
+```java
+boolean esMayorDeEdad = true;
+```
+:::
+
+## Resumen visual de los tipos primitivos
+
+| Tipo   | Categoría        | Ejemplo                |
+|--------|------------------|------------------------|
+| `byte` | Número entero    | `byte edad = 25;`      |
+| `short`| Número entero    | `short año = 2024;`    |
+| `int`  | Número entero    | `int distancia = 1500;`|
+| `long` | Número entero    | `long estrellas = 9223372036854775807L;` |
+| `float`| Número decimal   | `float peso = 68.5f;`  |
+| `double`| Número decimal  | `double pi = 3.141592;`|
+| `char` | Carácter         | `char inicial = 'A';`  |
+| `boolean`| Valor lógico   | `boolean esMayorDeEdad = true;` |
+
+
+## ¿Por qué son importantes?
+
+Los tipos de datos primitivos son esenciales porque le dicen a Java **cuánta memoria necesita reservar** para almacenar un valor y qué tipo de operaciones puede realizar con él. Por ejemplo, no puedes sumar un `char` con un `boolean`, pero sí puedes sumar dos `int`.
+
+---
+### Ejemplo práctico
+
+Aquí tienes un programa simple que utiliza varios tipos de datos primitivos:
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+  <TabItem label="Código" icon='laptop'>
+    ```java
+    public class TiposPrimitivos {
+        public static void main(String[] args) {
+            int edad = 30; // Número entero
+            double altura = 1.75; // Número decimal
+            char inicial = 'J'; // Carácter
+            boolean esProgramador = true; // Valor booleano
+
+            System.out.println("Edad: " + edad);
+            System.out.println("Altura: " + altura);
+            System.out.println("Inicial: " + inicial);
+            System.out.println("¿Es programador? " + esProgramador);
+        }
+    }
+    ```
+  </TabItem>
+  <TabItem label="Salida" icon='seti:powershell'>
+    ```
+    Edad: 30
+    Altura: 1.75
+    Inicial: J
+    ¿Es programador? true
+    ```
+  </TabItem>
+</Tabs>
+
+
+## Conclusión
+
+Los **tipos de datos primitivos** son una parte fundamental de la programación en Java. Entender cómo funcionan y cuándo usarlos te ayudará a escribir programas más eficientes y organizados. Recuerda practicarlos escribiendo código para aprenderlos mejor. ¡Tú puedes! 🚀

@@ -17,114 +17,122 @@ Además, Java no solo se usa para computadoras; ¡también está presente en tel
 
 - **Oracle y Java**: En 2009, la empresa **Oracle Corporation** compró Sun Microsystems y tomó el control de Java, manteniéndolo hasta el día de hoy.
 
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid>
+	<Card title="James Gosling">
+		![Una nave espacial en el espacio](../../../assets/section01/james-gosling.webp)
+        <p>James Gosling, conocido como el "padre de Java", lideró el equipo que creó este lenguaje de programación revolucionario.</p>
+	</Card>
+	<Card title="Java a Oracle">
+		![El logotipo de Oracle](../../../assets/section01/oracle.jpg)
+        <p>En 2009, Oracle adquirió Sun Microsystems y se convirtió en el propietario de Java, manteniendo su desarrollo y soporte.</p>
+	</Card>
+</CardGrid>
+
 ## Las características que hacen único a Java
 
-1. **Multiplataforma**: Un programa en Java puede ejecutarse en cualquier sistema operativo gracias a la **Máquina Virtual de Java (JVM)**.
+Java es un lenguaje de programación poderoso y versátil. Aquí te presentamos algunas de sus características más importantes:
 
-2. **Fácil de aprender**: Su sintaxis (cómo se escribe el código) es clara y similar a lenguajes como C y C++, lo que facilita su aprendizaje.
+<CardGrid>
+	<Card title="Multiplataforma" icon='laptop'>
+		Un programa en Java puede ejecutarse en cualquier sistema operativo gracias a la **Máquina Virtual de Java (JVM)**.
+	</Card>
+	<Card title="Fácil de aprender" icon='open-book'>
+		Su sintaxis (cómo se escribe el código) es clara y similar a lenguajes como C y C++, lo que facilita su aprendizaje.
+	</Card>
+    <Card title="Seguro" icon='seti:lock'>
+        Java protege tus programas de amenazas externas y administra automáticamente la memoria.
+    </Card>
+    <Card title="Orientado a objetos" icon='seti:svg'>
+        Java organiza el código en *clases* y *objetos*, lo que ayuda a que sea más claro y fácil de mantener.
+    </Card>
+    <Card title="Multitarea" icon='list-format'>
+        Java permite ejecutar varias tareas al mismo tiempo, ideal para programas que necesitan ser rápidos.
+    </Card>
+    <Card title="Bibliotecas listas para usar" icon='seti:notebook'>
+        Incluye muchas herramientas que simplifican tareas comunes, como conectarse a bases de datos o crear interfaces gráficas.
+    </Card>
+</CardGrid>
 
-3. **Seguro**: Java protege tus programas de amenazas externas y administra automáticamente la memoria.
-
-4. **Orientado a objetos**: Java organiza el código en *clases* y *objetos*, lo que ayuda a que sea más claro y fácil de mantener.
-
-5. **Multitarea**: Java permite ejecutar varias tareas al mismo tiempo, ideal para programas que necesitan ser rápidos.
-
-6. **Bibliotecas listas para usar**: Incluye muchas herramientas que simplifican tareas comunes, como conectarse a bases de datos o crear interfaces gráficas.
-
-## Ventajas y desventajas de Java
-
-Java es un lenguaje poderoso, pero como cualquier tecnología, tiene sus pros y contras. Aquí te presentamos algunos de ellos:
-
-### Ventajas
-
-<Steps>
-1. Multiplataforma (Portabilidad)
-    - Los programas escritos en Java pueden ejecutarse en cualquier sistema operativo que tenga instalada la **Máquina Virtual de Java (JVM)**.  
-    - Esto significa que puedes desarrollar una vez y ejecutar en Windows, macOS, Linux o incluso en dispositivos móviles sin necesidad de cambios.
-
-2. Lenguaje Orientado a Objetos
-    - Java organiza su código en *clases* y *objetos*, lo que permite una mejor estructuración, reutilización del código y facilita el mantenimiento.  
-    - Conceptos como encapsulación, herencia y polimorfismo lo hacen ideal para proyectos grandes y complejos.
-
-3. Fácil de aprender y usar
-    - Su sintaxis es sencilla, clara y similar a lenguajes como C y C++, lo que facilita el aprendizaje para principiantes.  
-    - Además, cuenta con una amplia documentación y una comunidad activa que brinda apoyo.
-
-4. Seguridad
-    - Java tiene características integradas para proteger aplicaciones contra ataques maliciosos, como la verificación de código y la gestión de memoria segura.  
-    - Es una excelente opción para aplicaciones empresariales que requieren altos estándares de seguridad.
-
-5. Gestión automática de memoria
-    - Java utiliza un **Recolector de Basura (Garbage Collector)** que se encarga de liberar automáticamente la memoria no utilizada, lo que reduce los errores relacionados con la gestión manual de memoria.
-
-6. Multihilo (Multitarea)
-    - Java permite ejecutar múltiples tareas al mismo tiempo utilizando hilos (*threads*), lo que mejora el rendimiento y es ideal para aplicaciones que necesitan manejar grandes volúmenes de datos o realizar tareas en segundo plano.
-
-7. Amplia biblioteca estándar
-    - Incluye un conjunto de herramientas y bibliotecas listas para usar que simplifican tareas comunes como manejo de bases de datos, redes, creación de interfaces gráficas, y más.
-
-8. Comunidad y soporte
-    - La comunidad de desarrolladores de Java es enorme, con foros, tutoriales, y recursos disponibles. Esto hace que sea fácil encontrar soluciones a problemas y aprender nuevas técnicas.
-
-</Steps>
-
-### Desventajas
-
-<Steps>
-1. Rendimiento más lento
-    - Java es un lenguaje interpretado por la **Máquina Virtual de Java (JVM)**, lo que significa que el código pasa por un paso adicional antes de ejecutarse.  
-    - Esto hace que sea más lento comparado con lenguajes como C++ que se compilan directamente al código de máquina.
-
-2. Alto consumo de memoria y recursos
-    - Las aplicaciones Java pueden requerir más memoria y recursos del sistema debido a la JVM y al manejo automático de memoria.  
-    - Esto puede ser un problema en sistemas con recursos limitados o en aplicaciones muy pesadas.
-
-3. Verbosidad del código
-    - La sintaxis de Java tiende a ser más larga y detallada en comparación con otros lenguajes modernos como Python.  
-    - Esto puede hacer que el código sea más difícil de leer y mantener en proyectos grandes.
-
-4. Dependencia de la JVM
-    - Aunque la JVM hace que Java sea multiplataforma, también introduce una dependencia: sin una JVM instalada, el programa no puede ejecutarse.  
-    - Además, las diferentes versiones de JVM pueden causar problemas de compatibilidad.
-
-5. Complejidad en el desarrollo web
-    - Aunque existen frameworks como **Spring** y **Hibernate**, configurar aplicaciones web en Java puede ser más complicado y llevar más tiempo que en lenguajes como JavaScript, Python o PHP.
-
-6. No es ideal para aplicaciones específicas
-    - En desarrollo de videojuegos avanzados o aplicaciones que requieren un rendimiento extremo, Java no suele ser la mejor opción.  
-    - Lenguajes como C++ o motores especializados suelen ser preferidos en estas áreas.
-
-</Steps>
 
 ## Tecnologías que usan Java
 
 Java es un lenguaje versátil que se utiliza en una amplia variedad de tecnologías y aplicaciones que puedes ver en Puedes [aquí](https://www.oracle.com/pe/java/technologies/). Algunas de las áreas donde Java brilla son:
 
-- ### Java SE (Standard Edition)  
-La **Edición Estándar de Java** incluye todas las herramientas y bibliotecas necesarias para crear aplicaciones básicas de escritorio y aprender el lenguaje. Algunas de sus características son:  
-    - APIs para manejo de colecciones, archivos y redes.  
-    - Soporte para programación multihilo.  
-    - Herramientas básicas para la gestión de memoria y la JVM.
+<CardGrid>
+	<Card title="Java SE">
+		![Java SE](../../../assets/section01/java-se.png)
+        <p>La Edición Estándar de Java es la base para la mayoría de las aplicaciones Java, incluyendo aplicaciones de escritorio y servicios web.</p>
+	</Card>
 
-- ### Java EE (Enterprise Edition)
-La **Edición Empresarial de Java** está diseñada para aplicaciones complejas, escalables y seguras, utilizadas principalmente en grandes organizaciones. Ofrece:  
-- Tecnologías como **Servlets**, **JSP (JavaServer Pages)** y **EJB (Enterprise JavaBeans)** para desarrollo web.  
-- Soporte para servicios web con **JAX-RS** y **JAX-WS**.  
-- Integración con bases de datos mediante **JDBC**.  
-- Frameworks empresariales como **Spring** y **Hibernate**.
+    <Card title="Java EE">
+        ![Java EE](../../../assets/section01/java-ee.png)
+        <p>La Edición Empresarial de Java se enfoca en aplicaciones empresariales complejas, escalables y seguras.</p>
+    </Card>
 
-- ### Java ME (Micro Edition)
-La **Edición Micro** está destinada a dispositivos con recursos limitados, como teléfonos móviles, sistemas integrados o dispositivos IoT (Internet de las Cosas).  
-- Permite crear aplicaciones ligeras.  
-- Es ideal para dispositivos portátiles y electrónicos pequeños.
+    <Card title="Java ME">
+        ![Java ME](../../../assets/section01/java-me.png)
+        <p>La Edición Micro de Java está diseñada para dispositivos con recursos limitados, como teléfonos móviles y sistemas integrados.</p>
+    </Card>
+
+    <Card title="Java Card">
+        ![Java Card](../../../assets/section01/java-card.png)
+        <p>Java Card es una plataforma segura para tarjetas inteligentes y dispositivos con microcontroladores.</p>
+    </Card>
+
+    <Card title = "Java TV">
+        ![Java TV](../../../assets/section01/java-tv.png)
+        <p>Java TV es una plataforma para aplicaciones interactivas y servicios de televisión digital.</p>
+    </Card>
+
+    <Card title="Java DB">
+        ![Java DB](../../../assets/section01/java-db.png)
+        <p>Java DB es una base de datos relacional basada en Apache Derby que se puede integrar fácilmente en aplicaciones Java.</p>
+    </Card>
+
+</CardGrid>
 
 ## ¿Dónde se usa Java?
 
-Java es tan versátil que está en todas partes:
+Java es un lenguaje de programación muy popular y se utiliza en una amplia variedad de aplicaciones y tecnologías. Algunas de las áreas donde Java es esencial son:
 
-1. **Aplicaciones móviles**: Es el principal lenguaje para desarrollar apps en Android.
-2. **Web**: Con frameworks como **Spring** y **Hibernate**, Java es clave en el desarrollo web empresarial.
-3. **Videojuegos**: Aunque no es el líder en esta área, se usa en juegos simples y aplicaciones interactivas.
-4. **Finanzas**: Bancos y empresas usan Java para desarrollar sistemas seguros y fiables.
-5. **IoT (Internet de las Cosas)**: Java impulsa dispositivos inteligentes, como termostatos y relojes.
+<CardGrid>
+	<Card title="Sitios Web">
+		![Aplicaciones Web](../../../assets/section01/app/app-web.png)
+        <p>Java es ampliamente utilizado en el desarrollo de aplicaciones web, especialmente en aplicaciones empresariales y de comercio electrónico.</p>
+	</Card>
+
+    <Card title="Internet de las cosas (IoT)">
+        ![Redes](../../../assets/section01/app/app-redes.png)
+        <p>Java se utiliza en dispositivos inteligentes, como termostatos y relojes inteligentes, para impulsar la conectividad y la interactividad.</p>
+    </Card>
+
+    <Card title="Aplicaciones Empresariales">
+        ![Aplicaciones Empresariales](../../../assets/section01/app/app-ee.png)
+        <p>Java es el lenguaje de programación preferido para el desarrollo de aplicaciones empresariales, como sistemas de gestión de recursos empresariales (ERP) y sistemas de planificación de recursos empresariales (ERP).</p>
+    </Card>
+
+    <Card title="Juegos">
+        ![Juegos](../../../assets/section01/app/app-game.png)
+        <p>Aunque no es el lenguaje de programación más popular para el desarrollo de juegos, Java se utiliza en el desarrollo de juegos simples y aplicaciones interactivas.</p>
+    </Card>
+
+    <Card title = "Finanzas">
+        ![Finanzas](../../../assets/section01/app/app-fin.png)
+        <p>Java es ampliamente utilizado en el sector financiero para el desarrollo de sistemas seguros y fiables.</p>
+    </Card>
+
+    <Card title="Aplicaciones Móviles">
+        ![Aplicaciones Monbiles](../../../assets/section01/app/app-mobile.png)
+        <p>Java es el lenguaje de programación principal para el desarrollo de aplicaciones Android.</p>
+    </Card>
+
+    
+
+</CardGrid>
+
+## Conclusión
+
+Java es un lenguaje de programación versátil y poderoso que se utiliza en una amplia variedad de aplicaciones y tecnologías. Su portabilidad, seguridad y facilidad de uso lo convierten en una excelente opción para desarrolladores de todo el mundo. Si estás interesado en aprender Java, ¡sigue adelante! ¡Te espera un mundo de posibilidades!
 

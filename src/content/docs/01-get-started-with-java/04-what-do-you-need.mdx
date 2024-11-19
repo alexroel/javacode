@@ -29,19 +29,30 @@ El compilador es como un traductor: convierte el código que escribes en un arch
 
    - **Java Virtual Machine (JVM)**: La **Máquina Virtual de Java (JVM)** es la encargada de ejecutar el *bytecode*. Permite que los programas funcionen igual en Windows, macOS o Linux.  
 
-- **APIs de Java **: Las **APIs (Application Programming Interfaces)** son bibliotecas con código preconstruido que puedes usar. Por ejemplo, si quieres trabajar con fechas o conectarte a internet, las APIs ya tienen soluciones listas para ti.  
+- **APIs de Java**: Las **APIs (Application Programming Interfaces)** son bibliotecas con código preconstruido que puedes usar. Por ejemplo, si quieres trabajar con fechas o conectarte a internet, las APIs ya tienen soluciones listas para ti.  
 
-## Alternativas al JDK  
+## Alternativas al JDK
 
-Aunque el <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">JDK de Oracle</a>
- es muy conocido, existen otras opciones que ofrecen las mismas herramientas con ventajas específicas. Aquí tienes las mejores alternativas:  
+Java es un lenguaje de programación muy popular, por lo que hay varias opciones para elegir el JDK que mejor se adapte a tus necesidades.
+
+Oracle JDK es la versión oficial de Java, pero hay otras alternativas que ofrecen las mismas herramientas con ventajas específicas. Aquí tienes las mejores opciones:
+
+import { LinkCard } from '@astrojs/starlight/components';
+
+<LinkCard
+   title="Adoptium OpenJDK"
+   href="https://adoptium.net/es/"
+   target={true}
+   description="Versión gratuita y de código abierto del JDK oficial."
+/>
+
+<LinkCard
+   title="Amazon Corretto"
+   href="https://aws.amazon.com/es/corretto/"
+   target={true}
+   description="Distribución gratuita del OpenJDK mantenida por Amazon."
+/>
   
-- <a href="https://adoptium.net/es/" target="_blank">OpenJDK</a> es una versión gratuita y de código abierto del JDK oficial.
-
-- <a href="https://aws.amazon.com/es/corretto/" target="_blank">Amazon Corretto</a> es una distribución gratuita del OpenJDK mantenida por Amazon, diseñada para aplicaciones empresariales.
-
-
-
 ## ¿Qué es un IDE?  
 
 Un **IDE (Integrated Development Environment)** es como tu oficina personal para programar. Incluye todo lo que necesitas en un solo lugar:  
@@ -56,15 +67,33 @@ Usar un IDE te hace la vida más fácil porque:
 - Te permite ejecutar y depurar tu programa sin salir del mismo entorno.  
 
 ### IDE recomendados para Java  
-1. **<a href="https://www.eclipse.org/" target="_blank">Eclipse</a>**  
-   - Muy completo, ideal para proyectos grandes.
 
-2. **<a href="https://www.jetbrains.com/idea/" target="_blank">IntelliJ IDEA</a>** 
-   - Fácil de usar y excelente para principiantes.
+<LinkCard
+   title="IntelliJ IDEA"
+   href="https://www.jetbrains.com/idea/"
+   target={true}
+   description="Fácil de usar y excelente para principiantes y profesionales."
+/>
 
-3. **<a href="https://netbeans.apache.org/" target="_blank">NetBeans</a>** 
-   - Perfecto para estudiantes y proyectos pequeños. 
+<LinkCard
+   title="Eclipse"
+   href="https://www.eclipse.org/"
+   target={true}
+   description="Muy completo, ideal para proyectos grandes."
+/>
 
-4.  **<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code (VS Code)</a>**  
-   - Ligero y con extensiones para Java. 
+<LinkCard
+   title="NetBeans"
+   href="https://netbeans.apache.org/"
+   target={true}
+   description="Perfecto para estudiantes y proyectos pequeños."
+/>
+
+<LinkCard
+   title="Visual Studio Code (VS Code)"
+   href="https://code.visualstudio.com/"
+   target={true}
+   description="Ligero y con extensiones para Java."
+/>
+
 
