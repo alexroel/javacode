@@ -2,3 +2,157 @@
 title: Condiciones if-else
 description: Aprende a usar las condiciones if-else en Java para tomar decisiones en tus programas.
 ---
+
+Los condicionales son una estructura clave en cualquier lenguaje de programación, ya que permiten ejecutar bloques de código basados en condiciones específicas. En este artículo, exploraremos el uso de condicionales `if-else` en Java con el ejemplo proporcionado, abordando desde una condición simple hasta múltiples condiciones y anidación.
+
+
+## Condiciones if-else
+Las condiciones `if-else` son una estructura fundamental en programación que permite tomar decisiones en función de ciertas condiciones. La sintaxis básica de una declaración `if-else` en Java es la siguiente:
+
+```java
+if (condicion) {
+    // Bloque de código si la condición es verdadera
+} else {
+    // Bloque de código si la condición es falsa
+}
+```
+
+
+## Condición simple
+La estructura básica de un condicional `if` evalúa una única condición. Si esta es verdadera, ejecuta un bloque de código.
+
+**Ejemplo:**
+```java
+int numero = 0;
+
+if (numero == 0) {
+    System.out.println("El número es Cero");
+}
+```
+- **Condición**: `numero == 0`
+- Si se cumple, imprime: `"El número es Cero"`.
+
+
+## Condición doble (`if-else`)
+Cuando queremos realizar una acción diferente si la condición no se cumple, usamos `if-else`.
+
+**Ejemplo:**
+```java
+int numero = 4;
+
+if (numero > 0) {
+    System.out.println("El número es positivo");
+} else {
+    System.out.println("El número no es positivo");
+}
+```
+- Si `numero > 0`, imprime: `"El número es positivo"`.
+- De lo contrario, imprime: `"El número no es positivo"`.
+
+---
+
+## Múltiples condiciones (`if-else if`)
+Para manejar más de dos posibilidades, utilizamos `if-else if`.
+
+**Ejemplo:**
+```java
+int numero = 0;
+
+if (numero > 0) {
+    System.out.println("El número es positivo");
+} else if (numero < 0) {
+    System.out.println("El número es negativo");
+} else {
+    System.out.println("El número es Cero");
+}
+```
+- Evalúa:
+  1. ¿Es positivo?
+  2. ¿Es negativo?
+  3. Si no es ninguna de las anteriores, entonces es cero.
+
+
+## Anidación de condiciones
+En algunos casos, se requiere evaluar una condición dentro de otra. Esto se conoce como **condicionales anidados**.
+
+**Ejemplo:**
+```java
+int numero = 5;
+
+if (numero > 0) {
+    if (numero % 2 == 0) {
+        System.out.println("El número es Par positivo");
+    } else {
+        System.out.println("El número es Impar positivo");
+    }
+} else if (numero < 0) {
+    if (numero % 2 == 0) {
+        System.out.println("El número es Par negativo");
+    } else {
+        System.out.println("El número es Impar negativo");
+    }
+}
+```
+- Primero, evalúa si el número es positivo o negativo.
+- Luego, dentro de cada caso, determina si es par o impar.
+
+
+### Ejemplo Completo
+Usaremos el siguiente código para determinar si un número es **positivo, negativo o cero** y si es **par o impar**:
+
+
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+  <TabItem label="Código" icon='laptop'>
+        ```java
+        // Importa clase Sacanner
+        import java.util.Scanner;
+
+        public class QueNumeroEs {
+            public static void main(String[] args) {
+                // Crear objeto Scanner
+                Scanner leer = new Scanner(System.in);
+
+                // Solicitar al usuario ingresar un número
+                System.out.print("Ingrese un número: ");
+                int numero = leer.nextInt();
+
+                // Usando if-else con anidación para determinar si el número es par o impar, positivo, negativo o cero
+                if (numero == 0) {
+                    System.out.println("El número es Cero");
+                } else {
+                    if (numero > 0) {
+                        if (numero % 2 == 0) {
+                            System.out.printf("El número %d es Par positivo\n", numero);
+                        } else {
+                            System.out.println("El número %d es Impar positivo\n", numero);
+                        }
+                    } else {
+                        if (numero % 2 == 0) {
+                            System.out.println("El número %d es Par negativo\n", numero);
+                        } else {
+                            System.out.println("El número %d es Impar negativo\n", numero);
+                        }
+                    }
+                }
+            }
+        }
+        ```
+  </TabItem>
+  <TabItem label="Salida" icon='seti:powershell'>
+    ```
+    Ingrese un número: 145
+    El número 145 es Impar positivo
+    ```
+  </TabItem>
+</Tabs>
+
+
+## Buenas prácticas
+1. **Claridad del código**: Usa comentarios y estructuras claras para evitar confusiones.
+2. **Evitar anidaciones profundas**: Demasiados niveles pueden hacer el código difícil de leer. Se pueden simplificar usando operadores lógicos (`&&`, `||`) o funciones auxiliares.
+3. **Pruebas exhaustivas**: Asegúrate de probar tu programa con casos límite (0, números negativos, números positivos).
+
+Con esta guía, ahora tienes las herramientas necesarias para trabajar con condicionales en Java y aplicar lógica avanzada en tus programas. ¡Experimenta con tus propios ejemplos!

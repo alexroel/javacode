@@ -2,3 +2,62 @@
 title: Operadores lógicos
 description: Aprende a combinar condiciones en Java con los operadores lógicos.
 ---
+
+Los **operadores lógicos** en Java permiten combinar condiciones y expresiones booleanas para formar condiciones más complejas. Este artículo explora los operadores lógicos más comunes en Java, cómo funcionan y cómo podemos probarlos fácilmente utilizando **JShell**, la herramienta interactiva de Java.
+
+
+## Operadores Lógicos  
+
+Se utilizan para construir expresiones más complejas mediante combinaciones de condiciones.  
+
+| Operador | Descripción                          | Ejemplo          |
+|----------|--------------------------------------|------------------|
+| `&&`     | AND lógico: true si ambas condiciones son true  | `a > 0 && b > 0` |
+| `||`     | OR lógico: true si al menos una condición es true | `a > 0 || b < 0` |
+| `!`      | NOT lógico: invierte el valor booleano | `!a > 0`         |
+
+**Ejemplo en JShell:**  
+
+```java
+int edad = 25;
+boolean esEstudiante = true;
+
+// AND lógico
+edad > 18 && esEstudiante // Devuelve true porque ambas condiciones son true
+
+// OR lógico
+edad < 18 || esEstudiante // Devuelve true porque al menos una condición es true
+
+// NOT lógico
+!(edad > 18) // Devuelve false porque invierte el resultado de true a false
+```
+
+
+## Expresiones Combinadas  
+
+Podemos mezclar operadores aritméticos, de comparación, lógicos y condicionales para crear expresiones más complejas.  
+
+**Ejemplo en JShell:**  
+
+```java
+int a = 5;
+int b = 10;
+int c = 15;
+
+// Expresión combinada
+boolean resultado = (a + b > c) && (c % b == 5) ? true : false;
+resultado // Devuelve true porque ambas condiciones se cumplen
+```
+
+**Explicación del ejemplo:**  
+
+1. `a + b > c` evalúa si 5 + 10 es mayor que 15. Resultado: `false`.
+2. `c % b == 5` evalúa si el residuo de 15 entre 10 es 5. Resultado: `true`.  
+3. La condición combinada con `&&` devuelve `false` porque ambas partes deben ser true.  
+4. El operador ternario evalúa y devuelve `false`.
+
+## Conclusión  
+
+Los operadores son herramientas esenciales en Java para realizar cálculos, comparaciones y tomar decisiones lógicas. Utilizar **JShell** permite experimentar con ellos de forma interactiva, lo que facilita el aprendizaje.  
+
+¡Abre tu terminal, inicia JShell y empieza a construir tus propias expresiones complejas hoy mismo! 🚀

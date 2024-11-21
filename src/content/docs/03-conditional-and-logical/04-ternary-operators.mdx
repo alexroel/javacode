@@ -2,3 +2,60 @@
 title: Operadores ternarios
 description: Aprende a usar el operador ternario en Java para simplificar tus condiciones.
 ---
+
+En Java, el **operador ternario** es una forma abreviada y elegante de escribir una expresión condicional que normalmente requeriría una estructura `if-else`. Este operador, también conocido como el **operador condicional**, permite evaluar una expresión y devolver un valor basado en una condición.
+
+## ¿Qué es el operador ternario?
+
+El operador ternario utiliza el símbolo `?` y tiene la siguiente estructura:
+
+```java
+condición ? expresión1 : expresión2;
+```
+
+- **`condición`**: Una expresión booleana que se evalúa como `true` o `false`.
+- **`expresión1`**: El valor que se devuelve si la condición es `true`.
+- **`expresión2`**: El valor que se devuelve si la condición es `false`.
+
+Es llamado "ternario" porque involucra tres partes: la condición, el valor para `true` y el valor para `false`.
+
+**Ejemplo básico**
+
+Supongamos que queremos determinar si una persona es mayor de edad:
+
+```java
+int edad = 20;
+String resultado = (edad >= 18) ? "Mayor de edad" : "Menor de edad";
+System.out.println(resultado); // Salida: Mayor de edad
+```
+
+**Explicación**
+1. Se evalúa `edad >= 18`.
+2. Si la condición es `true`, se asigna `"Mayor de edad"` a `resultado`.
+3. Si es `false`, se asigna `"Menor de edad"`.
+
+## Uso en cálculos y asignaciones
+
+El operador ternario también se puede usar para realizar cálculos rápidos:
+
+```java
+int a = 10, b = 20;
+int mayor = (a > b) ? a : b;
+System.out.println("El mayor es: " + mayor); // Salida: El mayor es: 20
+```
+
+## Múltiples operadores ternarios
+Es posible anidar operadores ternarios, aunque esto puede reducir la legibilidad:
+
+```java
+int num = 0;
+String tipo = (num > 0) ? "Positivo" : (num < 0) ? "Negativo" : "Cero";
+System.out.println(tipo); // Salida: Cero
+```
+
+
+## Conclusión
+
+El operador ternario en Java es una herramienta poderosa para escribir código limpio y eficiente. Sin embargo, es crucial utilizarlo de manera adecuada para mantener la legibilidad del código, especialmente en proyectos grandes o colaborativos. Úsalo en situaciones donde una condición simple pueda ser evaluada sin complejidad adicional. 
+
+¿Listo para probar el operador ternario? Experimenta con diferentes escenarios y descubre cómo puede hacer tu código más elegante.

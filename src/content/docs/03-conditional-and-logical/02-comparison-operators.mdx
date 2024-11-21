@@ -2,3 +2,94 @@
 title: Operadores de comparación
 description: Aprende a comparar valores en Java con los operadores de comparación.
 ---
+
+Los **operadores de comparación** en Java son fundamentales para evaluar condiciones y realizar comparaciones entre valores. Este artículo explora los principales operadores de comparación en Java, cómo funcionan y cómo podemos probarlos fácilmente utilizando **JShell**, la herramienta interactiva de Java.
+
+## ¿Qué son los operadores de comparación?
+
+Los operadores de comparación permiten comparar dos valores y devolver un resultado booleano (`true` o `false`). Son esenciales para tomar decisiones en los programas mediante estructuras como `if`, `while` o `for`.
+
+## Principales operadores de comparación
+
+Java incluye los siguientes operadores de comparación:
+
+| Operador | Descripción                        | Ejemplo          |
+|----------|------------------------------------|------------------|
+| `==`     | Igualdad                          | `a == b`         |
+| `!=`     | Desigualdad                       | `a != b`         |
+| `>`      | Mayor que                         | `a > b`          |
+| `<`      | Menor que                         | `a < b`          |
+| `>=`     | Mayor o igual que                 | `a >= b`         |
+| `<=`     | Menor o igual que                 | `a <= b`         |
+
+
+
+## Probando operadores de comparación
+
+Aquí hay algunos ejemplos para experimentar con los operadores de comparación:
+
+### 1. Igualdad (`==`) y desigualdad (`!=`)
+
+Prueba estos comandos en JShell:
+
+```java
+int a = 10;
+int b = 20;
+
+// Comparar igualdad
+a == b // Devuelve false porque 10 no es igual a 20
+
+// Comparar desigualdad
+a != b // Devuelve true porque 10 es diferente de 20
+```
+
+### 2. Mayor que (`>`) y menor que (`<`)
+
+```java
+double x = 5.5;
+double y = 3.2;
+
+// Mayor que
+x > y // Devuelve true porque 5.5 es mayor que 3.2
+
+// Menor que
+x < y // Devuelve false porque 5.5 no es menor que 3.2
+```
+
+### 3. Mayor o igual que (`>=`) y menor o igual que (`<=`)
+
+```java
+int c = 15;
+int d = 15;
+
+// Mayor o igual que
+c >= d // Devuelve true porque 15 es igual a 15
+
+// Menor o igual que
+c <= d // Devuelve true porque 15 es igual a 15
+```
+
+---
+
+## Operadores de comparación en cadenas de texto
+
+En Java, las cadenas (`String`) no se comparan con `==` ni `!=`, ya que estos operadores evalúan referencias, no contenido. En su lugar, se utiliza el método `.equals()`:
+
+```java
+String str1 = "Java";
+String str2 = "Java";
+String str3 = new String("Java");
+
+// Comparar referencias
+str1 == str2 // Devuelve true porque ambas referencias apuntan al mismo objeto
+str1 == str3 // Devuelve false porque str3 es un objeto diferente
+
+// Comparar contenido
+str1.equals(str3) // Devuelve true porque el contenido es igual
+```
+
+## Conclusión
+
+Los operadores de comparación son herramientas esenciales en Java, y JShell es un entorno excelente para aprender y experimentar con ellos. Prueba diferentes combinaciones y observa los resultados en tiempo real para dominar este aspecto del lenguaje. 
+
+¿Listo para llevar tu conocimiento al siguiente nivel? ¡Abre JShell y comienza a explorar! 🚀

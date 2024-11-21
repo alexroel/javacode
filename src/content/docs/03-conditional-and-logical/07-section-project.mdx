@@ -2,3 +2,81 @@
 title: Proyecto - Sistema de descuentos
 description: En este proyecto vamos a crear un sistema de descuentos para una tienda de ropa.
 ---
+
+En este proyecto vamos a crear un sistema de descuentos para un restaurante. El sistema debe aplicar descuentos a los clientes según el monto de su compra. A continuación, se detallan los descuentos a aplicar:
+
+## Detalles del proyecto
+
+1. Solicitar al usuario el monto total de consumo.
+2. Aplicar descuentos según el monto de consumo:
+    - Si el monto de consumo es mayor a S/.50 pero menor o igual a S/.100, aplicar un descuento del 10%.
+    - Si el monto de consumo es mayor a S/.100 pero menor o igual a S/.200, aplicar un descuento del 20%.
+    - Si el monto de consumo es mayor a S/.200, aplicar un descuento del 30%.
+    - Si el monto de consumo es menor o igual a S/.50, no aplicar descuento.
+3. Mostrar el monto total de consumo y el monto con descuento aplicado.
+
+## Resultado esperado
+
+El programa debe solicitar al usuario el monto total de consumo y mostrar el monto total de consumo y el monto con descuento aplicado.
+
+```java 
+Ingrese el monto total de consumo: 150
+
+----------------------------------------
+Monto total de consumo: S/.150.00
+Monto de descuento aplicado: S/.30.00
+Monto con descuento aplicado: S/.120.00
+----------------------------------------
+```
+
+## Pasos para resolver el proyecto
+
+1. Crear un nuevo proyecto Java en tu IDE.
+2. Crear una clase `SistemaDescuentos`.
+3. Solicitar al usuario el monto total de consumo.
+4. Aplicar descuentos según el monto de consumo.
+5. Mostrar el monto total de consumo y el monto con desc
+6. Probar el programa con diferentes montos de consumo.
+
+```java
+import java.util.Scanner;
+
+public class SistemaDescuentos {
+    public static void main(String[] args) {
+        // Crear objeto Scanner
+        Scanner leer = new Scanner(System.in);
+
+        // Solicitar al usuario el monto total de consumo
+        System.out.print("Ingrese el monto total de consumo: ");
+        double monto = leer.nextDouble();
+
+        // Calcular descuento
+        double descuento = 0;
+        if (monto > 50 && monto <= 100) {
+            descuento = monto * 0.10;
+        } else if (monto > 100 && monto <= 200) {
+            descuento = monto * 0.20;
+        } else if (monto > 200) {
+            descuento = monto * 0.30;
+        }
+
+        // Calcular monto con descuento
+        double montoConDescuento = monto - descuento;
+
+        // Mostrar resultados
+        System.out.println("----------------------------------------");
+        System.out.printf("Monto total de consumo: S/. %.2f\n", monto);
+        System.out.printf("Monto de descuento aplicado: S/. %.2f\n", descuento);
+        System.out.printf("Monto con descuento aplicado: S/. %.2f\n", montoConDescuento);
+        System.out.println("----------------------------------------");
+
+        // Cerrar Scanner
+        leer.close();
+    }
+}
+```
+
+Felicitaciones, has completado el proyecto de sistema de descuentos. Ahora puedes probar el programa con diferentes montos de consumo para verificar su funcionamiento.
+
+¡Sigue practicando! 🚀
+

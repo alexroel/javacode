@@ -2,3 +2,124 @@
 title: Instrucción switch
 description: Aprende a usar la instrucción switch en Java para simplificar tus condiciones.
 ---
+
+La instrucción `switch` es una poderosa estructura de control en Java que simplifica la evaluación de una expresión, permitiendo ejecutar diferentes bloques de código según su valor. Es ideal cuando necesitas manejar múltiples condiciones de manera clara y ordenada.
+
+## Sintaxis básica
+
+La estructura de un `switch` es la siguiente:
+
+```java
+switch (expresion) {
+    case valor1:
+        // Código a ejecutar si la expresión es igual a valor1
+        break;
+    case valor2:
+        // Código a ejecutar si la expresión es igual a valor2
+        break;
+    // Otros casos...
+    default:
+        // Código a ejecutar si la expresión no coincide con ningún valor anterior
+}
+```
+
+- **`expresion`**: Debe ser de tipo primitivo o `String`. Evalúa el valor para determinar qué caso ejecutar.
+- **`case`**: Define un valor específico que la expresión puede tomar. Cada caso puede contener un bloque de código.
+- **`default`**: Opcional, se ejecuta si ninguno de los casos coincide con la expresión.
+- **`break`**: Detiene la ejecución del `switch` después de ejecutar un caso, evitando que otros casos se ejecuten.
+
+## Ejemplo 1: Uso básico de `switch`
+
+```java
+char genero = 'M';
+
+switch (genero) {
+    case 'M':
+        System.out.println("Es Hombre");
+        break;
+    case 'F':
+        System.out.println("Es Mujer");
+        break;
+    default:
+        System.out.println("Otro Caso");
+}
+```
+
+**Análisis del código:**
+1. **Variable de evaluación**: Se declara una variable `genero` de tipo `char` con el valor `'M'`.
+2. **Casos definidos**:
+   - `case 'M'`: Si el valor es `'M'`, imprime `"Es Hombre"`.
+   - `case 'F'`: Si el valor es `'F'`, imprime `"Es Mujer"`.
+3. **Caso por defecto**:
+   - `default`: Si el valor no coincide con `'M'` o `'F'`, imprime `"Otro Caso"`.
+4. **Uso de `break`**: Asegura que, al cumplir un caso, el programa salga del `switch` y no evalúe los siguientes.
+
+
+## Importancia del `break`
+
+Sin `break`, la ejecución continúa al siguiente caso incluso si ya se ha encontrado una coincidencia. Esto se conoce como **"fall-through"** y puede ser útil en algunos escenarios, pero generalmente se evita para mantener el código claro.
+
+**Ejemplo de fall-through:**
+```java
+int dia = 2;
+
+switch (dia) {
+    case 1:
+        System.out.println("Lunes");
+    case 2:
+        System.out.println("Martes");
+    case 3:
+        System.out.println("Miércoles");
+}
+```
+**Salida:**
+```
+Martes
+Miércoles
+```
+
+**Uso moderno de `switch` con expresiones**
+
+Desde Java 12, se introdujo una forma más concisa de trabajar con `switch`, que elimina la necesidad de escribir `break` explícitamente y permite devolver valores directamente.
+
+```java
+public static void main(String[] args) {
+    int edad = 25;
+    char genero = 'M';
+
+    String resultado = switch (genero) {
+        case 'M' -> (edad >= 18) ? "Hombre adulto" : "Joven hombre";
+        case 'F' -> (edad >= 18) ? "Mujer adulta" : "Joven mujer";
+        default -> "Otro caso";
+    };
+
+    System.out.println(resultado);
+}
+```
+
+**Análisis del código:**
+1. **Uso de la nueva sintaxis (`->`)**:
+   - Se reemplazan los bloques de código con flechas (`->`), haciendo el `switch` más compacto.
+2. **Operador ternario (`? :`)**:
+   - Evalúa si la edad es mayor o igual a 18 para determinar si es un adulto o un joven.
+3. **`default` conciso**:
+   - Define un valor predeterminado sin necesidad de un bloque separado.
+
+**Salida para `genero = 'M'` y `edad = 25`:**
+```
+Hombre adulto
+```
+
+## Comparación entre el enfoque tradicional y moderno
+
+| Característica         | Switch Tradicional                       | Switch con Expresiones       |
+|------------------------|-------------------------------------------|------------------------------|
+| **Sintaxis**           | Usa `case` y `break`.                   | Usa `case` con `->`.         |
+| **Bloques de código**  | Define bloques explícitos para cada caso.| Evalúa y devuelve valores.   |
+| **Legibilidad**        | Más código, pero explícito.              | Más compacto y limpio.       |
+| **Versión mínima**     | Disponible desde Java 1.0.               | Disponible desde Java 12.    |
+
+
+## Conclusión
+
+La instrucción `switch` es una herramienta versátil en Java, adecuada para manejar múltiples condiciones de manera eficiente. Con la introducción de expresiones `switch`, ahora es posible escribir código más limpio y legible. Es importante elegir el estilo adecuado según el contexto y la versión de Java que estés utilizando.
