@@ -1,0 +1,49 @@
+---
+title: Bucles For en Java
+description: En este artículo aprenderás sobre los bucles for en Java.
+---
+
+El bucle `for` en Java se utiliza para repetir un bloque de código un número de veces específico. Es una estructura de control de flujo que se utiliza para iterar sobre una secuencia de elementos.
+
+## Sintaxis de un bucle for
+
+La sintaxis de un bucle `for` en Java es la siguiente:
+
+```java
+for (inicialización; condición; actualización) {
+    // Cuerpo del bucle
+}
+```
+
+- La `inicialización` se ejecuta solo una vez al principio del bucle.
+- La `condición` se evalúa en cada iteración del bucle. Si la condición es verdadera, el cuerpo del bucle se ejecuta; de lo contrario, el bucle se detiene.
+- La `actualización` se ejecuta al final de cada iteración del bucle.
+
+
+El siguiente ejemplo muestra cómo imprimir los números del 1 al 5 utilizando un bucle `for` en Java:
+
+```java
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+```
+
+El bucle anterior imprimirá los números del 1 al 5 en la consola. Aquí, `i` es la variable de control que se inicializa en 1, se incrementa en 1 en cada iteración y el bucle se ejecuta mientras `i` sea menor o igual a 5.
+
+## Bucle for anidado
+
+Puedes anidar bucles `for` dentro de otros bucles `for` para iterar sobre matrices bidimensionales o realizar operaciones más complejas. Por ejemplo, el siguiente código imprime una tabla de multiplicación del 1 al 5:
+
+```java
+for (int i = 1; i <= 5; i++) {
+    for (int j = 1; j <= 10; j++) {
+        System.out.print(i * j + " ");
+    }
+    System.out.println();
+}
+```
+
+El bucle exterior itera sobre los números del 1 al 5, mientras que el bucle interior itera sobre los números del 1 al 10. La multiplicación de `i` y `j` se imprime en la consola, y se imprime una nueva línea después de cada iteración del bucle exterior.
+
+
+

@@ -1,0 +1,45 @@
+---
+title: Uso de break y continue
+description: En este artículo aprenderás sobre el uso de break y continue en Java.
+---
+
+En Java, `break` y `continue` son palabras clave que se utilizan en bucles para controlar el flujo de ejecución. Ambas palabras clave se utilizan para alterar el comportamiento normal de un bucle y permiten salir del bucle o saltar a la siguiente iteración según ciertas condiciones.
+
+## Uso de `break`
+
+La palabra clave `break` se utiliza para salir de un bucle en cualquier momento, independientemente de si se ha completado o no. Cuando se encuentra la instrucción `break`, el control del programa se transfiere fuera del bucle y la ejecución continúa con la siguiente instrucción después del bucle.
+
+El siguiente ejemplo muestra cómo salir de un bucle `for` en Java cuando se encuentra un número par:
+
+```java
+for (int i = 1; i <= 10; i++) {
+    if (i % 2 == 0) {
+        break;
+    }
+    System.out.println(i);
+}
+```
+
+En el ejemplo anterior, el bucle `for` itera sobre los números del 1 al 10. Cuando se encuentra un número par, la instrucción `break` se ejecuta y el bucle se detiene. Por lo tanto, solo se imprimirán los números impares del 1 al 9.
+
+## Uso de `continue`
+
+La palabra clave `continue` se utiliza para saltar a la siguiente iteración de un bucle sin ejecutar el resto del código en el cuerpo del bucle. Cuando se encuentra la instrucción `continue`, el control del programa se transfiere al final del bucle y se inicia la siguiente iteración.
+
+El siguiente ejemplo muestra cómo omitir los números pares en un bucle `for` en Java:
+
+```java
+for (int i = 1; i <= 10; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    System.out.println(i);
+}
+```
+
+En el ejemplo anterior, el bucle `for` itera sobre los números del 1 al 10. Cuando se encuentra un número par, la instrucción `continue` se ejecuta y se salta a la siguiente iteración del bucle. Por lo tanto, solo se imprimirán los números impares del 1 al 9.
+
+## Conclusión
+
+En resumen, `break` y `continue` son palabras clave que se utilizan para controlar el flujo de ejecución en bucles en Java. `break` se utiliza para salir de un bucle en cualquier momento, mientras que `continue` se utiliza para saltar a la siguiente iteración de un bucle. Ambas palabras clave son útiles para escribir código más eficiente y legible al trabajar con bucles en Java.
+

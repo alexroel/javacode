@@ -1,0 +1,56 @@
+---
+title: For-each en Java
+description: En este artículo aprenderás sobre el bucle for-each en Java.
+---
+
+El bucle `for-each` en Java es una forma conveniente de iterar sobre una colección de elementos, como un array o una lista. El bucle `for-each` se introdujo en Java 5 y simplifica la iteración sobre una colección al ocultar los detalles de la implementación del bucle `for` estándar.
+
+## Sintaxis del bucle for-each en Java
+
+La sintaxis del bucle `for-each` en Java es la siguiente:
+
+```java
+
+for (tipo variable : coleccion) {
+    // Cuerpo del bucle
+}
+
+```
+
+Donde `tipo` es el tipo de datos de los elementos de la colección, `variable` es la variable que se utilizará para almacenar cada elemento de la colección y `coleccion` es la colección sobre la que se iterará.
+
+Por ejemplo, para iterar sobre un array de enteros en Java, puedes hacer lo siguiente:
+
+```java
+
+int[] numeros = {1, 2, 3, 4, 5};
+for (int numero : numeros) {
+    System.out.println(numero);
+}
+
+```
+
+En este ejemplo, el bucle `for-each` itera sobre el array `numeros` y almacena cada elemento en la variable `numero`. El cuerpo del bucle imprime cada elemento del array en la consola.
+
+## Ventajas del bucle for-each en Java
+
+El bucle `for-each` en Java tiene varias ventajas sobre el bucle `for` estándar:
+
+- Es más conciso y fácil de leer que el bucle `for` estándar.
+- Oculta los detalles de la implementación del bucle `for` estándar.
+- Evita errores comunes, como los errores de índice fuera de rango.
+- Es más seguro, ya que no permite la modificación de la colección durante la iteración.
+
+En general, el bucle `for-each` es la forma preferida de iterar sobre una colección en Java, ya que simplifica el código y hace que sea menos propenso a errores.
+
+## Limitaciones del bucle for-each en Java
+
+Aunque el bucle `for-each` es una forma conveniente de iterar sobre una colección en Java, tiene algunas limitaciones:
+
+- No se puede utilizar para modificar la colección durante la iteración.
+- No se puede acceder al índice de los elementos de la colección.
+- No se puede utilizar para iterar sobre múltiples colecciones al mismo tiempo.
+
+Si necesitas modificar la colección durante la iteración o acceder al índice de los elementos, es posible que necesites utilizar un bucle `for` estándar en lugar de un bucle `for-each`.
+
+En resumen, el bucle `for-each` en Java es una forma conveniente y segura de iterar sobre una colección de elementos, como un array o una lista. Aunque tiene algunas limitaciones, el bucle `for-each` es la forma preferida de iterar sobre una colección en Java debido a su simplicidad y seguridad.

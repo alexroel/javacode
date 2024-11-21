@@ -1,0 +1,84 @@
+---
+title: Operadores de Incremento y Decremento
+description: En este artículo aprenderás sobre los operadores de incremento y decremento en Java.
+---
+
+En Java, los operadores de incremento y decremento se utilizan para aumentar o disminuir el valor de una variable en una unidad. En java existen dos tipos de operadores de incremento y decremento, estos operadores tienen mas funcionalidades en Java como pre-incremento, post-incremento, pre-decremento y post-decremento.
+
+## Operador de Incremento
+
+El operador de incremento `++` se utiliza para aumentar el valor de una variable en una unidad. Hay dos formas de usar el operador de incremento en Java: pre-incremento y post-incremento.
+
+### Pre-incremento
+
+En el pre-incremento, el valor de la variable se incrementa antes de que se utilice en una expresión. Por ejemplo:
+
+```java
+int c = 0;
+++c;
+++c;
+++c;
+++c;
+++c;
+System.out.println(c); // Output: 5
+```
+
+En el ejemplo anterior, la variable `c` se incrementa en una unidad antes de que se utilice en la expresión `++c`. Por lo tanto, el valor de `c` es `5` al final.
+
+### Post-incremento
+
+En el post-incremento, el valor de la variable se incrementa después de que se utilice en una expresión. Por ejemplo:
+
+```java
+int c = 0;
+c++;
+c++;
+c++;
+c++;
+c++;
+
+System.out.println(c); // Output: 5
+```
+
+En el ejemplo anterior, la variable `c` se incrementa en una unidad después de que se utilice en la expresión `c++`. Por lo tanto, el valor de `c` es `5` al final.
+
+## Operador de Decremento
+
+El operador de decremento `--` se utiliza para disminuir el valor de una variable en una unidad. Al igual que el operador de incremento, hay dos formas de usar el operador de decremento en Java: pre-decremento y post-decremento.
+
+### Pre-decremento
+
+En el pre-decremento, el valor de la variable se decrementa antes de que se utilice en una expresión. Por ejemplo:
+
+```java
+int c = 5;
+--c;
+--c;
+--c;
+--c;
+--c;
+
+System.out.println(c); // Output: 0
+```
+
+En el ejemplo anterior, la variable `c` se decrementa en una unidad antes de que se utilice en la expresión `--c`. Por lo tanto, el valor de `c` es `0` al final.
+
+### Post-decremento
+
+En el post-decremento, el valor de la variable se decrementa después de que se utilice en una expresión. Por ejemplo:
+
+```java
+
+int c = 5;
+c--;
+c--;
+c--;
+c--;
+c--;
+
+System.out.println(c); // Output: 0
+```
+
+En el ejemplo anterior, la variable `c` se decrementa en una unidad después de que se utilice en la expresión `c--`. Por lo tanto, el valor de `c` es `0` al final.
+
+

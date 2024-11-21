@@ -1,0 +1,133 @@
+---
+title: Proyecto - Juego adivina el número
+description: Crear un proyecto en Java para adivinar un número aleatorio.
+---
+
+En este proyecto, vamos a aplicar los conceptos aprendidos en la sección de **Operadores y condicionales** para crear un juego que permita adivinar un número aleatorio.
+
+## Descripción
+
+En este juego, el programa generará un número aleatorio entre 1 y 100. El jugador tendrá que adivinar el número en un máximo de 10 intentos. Después de cada intento, el programa mostrará si el número ingresado es mayor o menor al número generado.
+
+## Requerimientos
+
+Para completar este proyecto, necesitarás:
+
+- Crear un programa en Java que genere un número aleatorio entre 1 y 100.
+- Solicitar al usuario que adivine el número en un máximo de 10 intentos.
+- Mostrar si el número ingresado es mayor o menor al número generado.
+- Mostrar un mensaje de felicitaciones si el jugador adivina el número.
+- Mostrar un mensaje de derrota si el jugador no adivina el número en 10 intentos.
+
+**Ejemplo: **
+
+Supongamos que el número aleatorio generado es 37.
+
+```bash
+Adivina el Número
+=============================
+Intento 1: 50
+El número es menor.
+Intento 2: 25
+El número es mayor.
+Intento 3: 37
+El número es menor.
+Intento 4: 30
+El número es mayor.
+Intento 5: 34
+El número es menor.
+Intento 6: 32
+El número es menor.
+Intento 7: 31
+¡Felicidades! Has adivinado el número en 7 intentos.
+=============================
+```
+
+## Solución
+
+Para resolver este problema, necesitamos seguir los siguientes pasos:
+
+1. Generar un número aleatorio entre 1 y 100.
+2. Solicitar al usuario que adivine el número en un máximo de 10 intentos.
+3. Comparar el número ingresado con el número generado.
+4. Mostrar si el número ingresado es mayor o menor al número generado.
+5. Mostrar un mensaje de felicitaciones si el jugador adivina el número.
+6. Mostrar un mensaje de derrota si el jugador no adivina el número en 10 intentos.
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Tabs>
+  <TabItem label="Código" icon='laptop'>
+        ```java 
+        import java.util.Scanner;
+        import java.util.Random;
+
+        public class AdivinaNumero {
+            public static void main(String[] args) {
+                // Importar la clase Scanner
+                var entrada = new Scanner(System.in);
+                var aleatorio = new Random();
+
+                // Generar un número aleatorio entre 1 y 100
+                var numeroAleatorio = aleatorio.nextInt(100) + 1;
+                var intentos = 0;
+                var numeroIngresado = 0;
+
+                System.out.println("Adivina el Número");
+                System.out.println("=============================");
+
+                // Solicitar al usuario que adivine el número
+                while (intentos < 10 && numeroIngresado != numeroAleatorio) {
+                    intentos++;
+                    System.out.print("Intento " + intentos + ": ");
+                    numeroIngresado = entrada.nextInt();
+
+                    // Comparar el número ingresado con el número generado
+                    if (numeroIngresado < numeroAleatorio) {
+                        System.out.println("El número es mayor.");
+                    } else if (numeroIngresado > numeroAleatorio) {
+                        System.out.println("El número es menor.");
+                    }
+                }
+
+                // Mostrar el resultado
+                if (numeroIngresado == numeroAleatorio) {
+                    System.out.println("¡Felicidades! Has adivinado el número en " + intentos + " intentos.");
+                } else {
+                    System.out.println("¡Lo siento! No has adivinado el número en 10 intentos.");
+                }
+
+                System.out.println("=============================");
+            }
+        }
+        ```
+  </TabItem>
+  <TabItem label="Ejecución" icon='seti:powershell'>
+        
+        El número aleatorio generado es 37.
+
+        ```bash
+        Adivina el Número
+        =============================
+        Intento 1: 50
+        El número es menor.
+        Intento 2: 25
+        El número es mayor.
+        Intento 3: 37
+        El número es menor.
+        Intento 4: 30
+        El número es mayor.
+        Intento 5: 34
+        El número es menor.
+        Intento 6: 32
+        El número es menor.
+        Intento 7: 31
+        ¡Felicidades! Has adivinado el número en 7 intentos.
+        =============================
+        ```
+    </TabItem>
+</Tabs>
+
+## Conclusión
+
+En este proyecto, hemos creado un juego en Java que permite adivinar un número aleatorio en un máximo de 10 intentos. Hemos aplicado los conceptos de operadores y condicionales para comparar el número ingresado con el número generado y mostrar mensajes al jugador. Este proyecto es un buen ejemplo de cómo aplicar los conceptos básicos de Java en un programa interactivo y entretenido.

@@ -10,11 +10,18 @@ Los **operadores lógicos** en Java permiten combinar condiciones y expresiones 
 
 Se utilizan para construir expresiones más complejas mediante combinaciones de condiciones.  
 
-| Operador | Descripción                          | Ejemplo          |
-|----------|--------------------------------------|------------------|
-| `&&`     | AND lógico: true si ambas condiciones son true  | `a > 0 && b > 0` |
-| `||`     | OR lógico: true si al menos una condición es true | `a > 0 || b < 0` |
-| `!`      | NOT lógico: invierte el valor booleano | `!a > 0`         |
+- **Operador**: `&&`
+  - **Descripción**: AND lógico: true si ambas condiciones son true.
+  - **Ejemplo**: `a > 0 && b > 0`
+
+- **Operador**: `||`
+  - **Descripción**: OR lógico: true si al menos una condición es true.
+  - **Ejemplo**: `a > 0 || b < 0`
+
+- **Operador**: `!`
+  - **Descripción**: NOT lógico: invierte el valor booleano.
+  - **Ejemplo**: `!a > 0`
+
 
 **Ejemplo en JShell:**  
 
@@ -42,19 +49,17 @@ Podemos mezclar operadores aritméticos, de comparación, lógicos y condicional
 ```java
 int a = 5;
 int b = 10;
-int c = 15;
 
 // Expresión combinada
-boolean resultado = (a + b > c) && (c % b == 5) ? true : false;
-resultado // Devuelve true porque ambas condiciones se cumplen
+boolean resultado = (a + b > 15) && (15 % b == 5);
 ```
 
 **Explicación del ejemplo:**  
 
-1. `a + b > c` evalúa si 5 + 10 es mayor que 15. Resultado: `false`.
-2. `c % b == 5` evalúa si el residuo de 15 entre 10 es 5. Resultado: `true`.  
-3. La condición combinada con `&&` devuelve `false` porque ambas partes deben ser true.  
-4. El operador ternario evalúa y devuelve `false`.
+1. `(a + b > 15)` evalúa a `false` porque `5 + 10` es `15`, que no es mayor que `15`.
+2. `(15 % b == 5)` evalúa a `true` porque `15 % 10` es `5`.
+3. `(false) && (true)` resulta en `false` porque el operador `&&` requiere que ambas condiciones sean `true`.
+
 
 ## Conclusión  
 

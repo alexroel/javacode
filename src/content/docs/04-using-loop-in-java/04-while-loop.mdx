@@ -1,0 +1,70 @@
+---
+title: Bucles While en Java
+description: En este artículo aprenderás sobre los bucles while en Java.
+---
+
+En Java, el bucle `while` se utiliza para ejecutar un bloque de código repetidamente mientras se cumpla una condición. La condición se evalúa antes de ejecutar el bloque de código, por lo que el bloque de código puede no ejecutarse en absoluto si la condición es falsa desde el principio.
+
+## Sintaxis del Bucle While
+
+La sintaxis del bucle `while` en Java es la siguiente:
+
+```java
+
+while (condición) {
+    // Código a ejecutar
+}
+
+```
+
+Aquí hay un ejemplo de un bucle `while` en Java que imprime los números del 1 al 5:
+
+```java
+int i = 1;
+
+while (i <= 5) {
+    System.out.println(i);
+    i++;
+}
+```
+
+En este ejemplo, la variable `i` se inicializa en 1 y el bucle `while` se ejecuta mientras `i` sea menor o igual a 5. En cada iteración del bucle, se imprime el valor de `i` y luego se incrementa en 1. El bucle se detiene cuando `i` es mayor que 5.
+
+## Bucle While Infinito
+
+Es importante tener en cuenta que un bucle `while` puede convertirse en un bucle infinito si la condición nunca se vuelve falsa. Por ejemplo, el siguiente bucle `while` se ejecutará para siempre:
+
+```java
+while (true) {
+    System.out.println("¡Hola, mundo!");
+}
+```
+
+En este caso, la condición `true` siempre será verdadera, por lo que el bucle se ejecutará indefinidamente. Es importante tener cuidado al escribir bucles `while` para evitar bucles infinitos.
+
+## Bucle Do-While
+
+Además del bucle `while`, Java también proporciona el bucle `do-while`, que es similar al bucle `while` pero con una diferencia importante: el bloque de código se ejecuta al menos una vez antes de que se evalúe la condición. La sintaxis del bucle `do-while` es la siguiente:
+
+```java
+do {
+    // Código a ejecutar
+} while (condición);
+```
+
+Aquí hay un ejemplo de un bucle `do-while` en Java que imprime los números del 1 al 5:
+
+```java
+int i = 6;
+
+do {
+    System.out.println(i);
+    i++;
+} while (i <= 5);
+```
+
+En este ejemplo, el bloque de código se ejecuta al menos una vez antes de que se evalúe la condición. El bucle se detiene cuando `i` es mayor que 5.
+
+## Conclusión
+
+En este artículo, aprendiste sobre los bucles `while` en Java y cómo se utilizan para ejecutar un bloque de código repetidamente mientras se cumpla una condición. También aprendiste sobre los bucles `do-while` y cómo se diferencian de los bucles `while`. Es importante tener cuidado al escribir bucles `while` para evitar bucles infinitos y asegurarse de que la condición se vuelva falsa en algún momento para que el bucle se detenga.
