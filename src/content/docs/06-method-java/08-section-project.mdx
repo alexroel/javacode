@@ -1,0 +1,97 @@
+---
+title: Práctica de métodos en Java
+description: En esta práctica, aprenderás a escribir métodos en Java y cómo usarlos en tus programas Java.
+---
+
+Vamos poner en práctica lo que has aprendido sobre métodos en Java. En esta práctica, aprenderás a escribir métodos en Java y cómo usarlos en tus programas Java.
+
+Para esto vamo crear más métodos en nuestra clase `Aritmetica`, el método es para relizar resta de números enteros y decimales.
+
+## Instrucciones
+
+1. Crea un nuevo método en la clase `Aritmetica` llamado `restar` que acepte un número variable de argumentos de tipo `int` y devuelva la resta de todos los números.
+
+2. Crea otro método en la clase `Aritmetica` llamado `restar` que acepte un número variable de argumentos de tipo `double` y devuelva la resta de todos los números.
+
+3. En el método `main` de la clase `PruebaAritmetica` crea una instancia de la clase `Aritmetica` y llama a los métodos `restar` con diferentes argumentos para pro
+
+## Código de inicio
+
+```java
+
+public class Aritmetica {
+
+    static int sumar(int... numeros) {
+        int suma = 0;
+        for (int numero : numeros) {
+            suma += numero;
+        }
+        return suma;
+    }
+
+    // Escribe tus métodos aquí
+
+}
+
+public class PruebaAritmetica {
+
+    public static void main(String[] args) {
+        // Escribe tu código aquí
+    }
+}
+
+```
+
+## Código de solución
+
+```java
+
+public class Aritmetica {
+
+    static int sumar(int... numeros) {
+        int suma = 0;
+        for (int numero : numeros) {
+            suma += numero;
+        }
+        return suma;
+    }
+
+    static int restar(int... numeros) {
+        int resta = numeros[0];
+        for (int i = 1; i < numeros.length; i++) {
+            resta -= numeros[i];
+        }
+        return resta;
+    }
+
+    static double restar(double... numeros) {
+        double resta = numeros[0];
+        for (int i = 1; i < numeros.length; i++) {
+            resta -= numeros[i];
+        }
+        return resta;
+    }
+}
+
+```
+
+
+
+```java	
+
+public class PruebaAritmetica {
+
+    public static void main(String[] args) {
+        Aritmetica aritmetica = new Aritmetica();
+
+        int resultado1 = aritmetica.restar(10, 5, 2);
+        System.out.println("La resta de 10, 5 y 2 es: " + resultado1);
+
+        double resultado2 = aritmetica.restar(10.5, 5.2, 2.1);
+        System.out.println("La resta de 10.5, 5.2 y 2.1 es: " + resultado2);
+    }
+}
+
+```
+
+ 

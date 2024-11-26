@@ -1,0 +1,97 @@
+---
+title: Definicón de métodos
+description: En Java, un método es un bloque de código que se ejecuta cuando se llama. Un método tiene un nombre, un tipo de retorno, una lista de parámetros y un cuerpo. 
+---
+
+Para ver el tema de métodos en Java, primero debemos entender qué es un método. En Java, un método es un bloque de código que se ejecuta cuando se llama. Un método tiene un nombre, un tipo de retorno, una lista de parámetros y un cuerpo.
+
+## Sintaxis de un método
+
+La sintaxis de un método en Java es la siguiente:
+
+```java
+tipo_de_retorno nombre_del_metodo(parametros) {
+    // Cuerpo del método
+}
+```
+
+## Clase de Java sin propiedades 
+
+En Java, una clase puede tener métodos sin propiedades. 
+
+Para poner en practica sobre los métodos en Java, vamose crear una clase llamada `Aritmetica` que contenga un métodos para realizar operaiones aritméticas básicas.
+
+**Método sin retorno y sin parámetros**
+
+```java
+
+public class Aritmetica {
+    // Método sin retorno y sin parámetros
+    public void saludar() {
+        System.out.println("Hola, bienvenido a la clase de Java");
+    }
+}
+```
+
+- `public`: Modificador de acceso.
+- `void`: Tipo de retorno del método.
+- `saludar`: Nombre del método.
+- `()`: Parámetros del método.
+- `System.out.println("Hola, bienvenido a la clase de Java");`: Cuerpo del método.
+
+## Probar el método
+
+Para probar el método `saludar` de la clase `Aritmetica`, vamos a crear una clase `PruebaAritmetica` con un método `main` que cree un objeto de la clase `Aritmetica` y llame al método `saludar`.
+
+```java
+public class PruebaAritmetica {
+    public static void main(String[] args) {
+        // Crear un objeto de la clase Aritmetica
+        Aritmetica aritmetica = new Aritmetica();
+        // Llamar al método saludar
+        aritmetica.saludar();
+    }
+}
+```
+
+Esta clase crea un objeto de la clase `Aritmetica` y llama al método `saludar`. A este método se le llama método de instancia porque se llama a través de un objeto.
+
+## Método estático
+
+En Java, un método estático es un método que pertenece a la clase y no a los objetos de la clase. Un método estático se puede llamar sin crear un objeto de la clase.
+
+Para crear un método estático, se utiliza la palabra clave `static` antes del tipo de retorno del método.
+
+**Método estático sin retorno y sin parámetros**
+
+```java
+public class Aritmetica {
+    // Método estático sin retorno y sin parámetros
+    public static void saludar() {
+        System.out.println("Hola, bienvenido a la clase de Java");
+    }
+}
+```
+
+- `public`: Modificador de acceso.
+- `static`: Palabra clave para definir un método estático.
+- `void`: Tipo de retorno del método.
+- `saludar`: Nombre del método.
+- `()`: Parámetros del método.
+- `System.out.println("Hola, bienvenido a la clase de Java");`: Cuerpo del método
+
+**Probar el método estático**
+
+Para probar el método estático `saludar` de la clase `Aritmetica`, vamos a crear una clase `PruebaAritmetica` con un método `main` que llame al método `saludar` de la clase `Aritmetica`.
+
+```java
+public class PruebaAritmetica {
+    public static void main(String[] args) {
+        // Llamar al método saludar
+        Aritmetica.saludar();
+    }
+}
+```
+
+Esta clase llama al método estático `saludar` de la clase `Aritmetica`. A este método se le llama método de clase porque se llama a través de la clase.
+

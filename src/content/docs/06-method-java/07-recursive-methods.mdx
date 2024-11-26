@@ -1,0 +1,68 @@
+---
+title: Métodos recursivos
+description: Métodos recursivos en Java y cómo usarlos en tus programas Java
+---
+
+En Java, un método recursivo es un método que se llama a sí mismo para resolver un problema. La recursividad es una técnica de programación poderosa que se utiliza para resolver problemas que se pueden dividir en subproblemas más pequeños. En este tutorial, aprenderás cómo escribir métodos recursivos en Java y cómo usarlos en tus programas Java.
+
+## ¿Qué es la recursividad?
+
+La recursividad es un concepto en programación en el que una función se llama a sí misma para resolver un problema. La recursividad se basa en la idea de que un problema se puede dividir en subproblemas más pequeños que son más fáciles de resolver. Estos subproblemas se resuelven recursivamente hasta que se alcanza un caso base que no requiere más recursión.
+
+**Sintaxis de un método recursivo** 
+
+La sintaxis de un método recursivo es la siguiente:
+
+```java
+public int methodName(int n) {
+    if (casoBase) {
+        // Devolver valor base
+    } else {
+        // Llamar al método recursivamente
+        return methodName(n - 1);
+    }
+}
+```
+
+En esta sintaxis, `methodName` es el nombre del método, `n` es el parámetro que se pasa al método y `casoBase` es la condición que detiene la recursión. Si se cumple la condición del caso base, el método devuelve un valor base. De lo contrario, el método se llama a sí mismo con un valor más pequeño de `n`.
+
+
+## Ejemplo de un método recursivo
+
+Para nuestro ejemplo, vamos a escribir un método recursivo llamado `factorial` que calcula el factorial de un número entero. El factorial de un número entero `n` se define como el producto de todos los enteros positivos menores o iguales a `n`.
+
+Aquí está el código del método `factorial`:
+
+```java
+
+public class Aritmetica {
+
+    static int factorial(int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+}
+```
+
+En este ejemplo, el método `factorial` calcula el factorial de un número entero `n` utilizando recursión. Si `n` es igual a `0`, el método devuelve `1` como caso base. De lo contrario, el método se llama a sí mismo con un valor más pequeño de `n` y multiplica el resultado por `n`.
+
+## Llamando a un método recursivo
+
+Ahora podemos llamar al método `factorial` con cualquier número entero para calcular su factorial. Aquí hay un ejemplo de cómo llamar al método `factorial` con el número `5`:
+
+```java
+
+public class Main {
+
+    public static void main(String[] args) {
+        int resultado = Aritmetica.factorial(5);
+        System.out.println("El factorial es: " + resultado);
+    }
+}
+```
+
+En este ejemplo, llamamos al método `factorial` con el número `5` y almacenamos el resultado en una variable llamada `resultado`. Luego imprimimos el resultado en la consola.
+

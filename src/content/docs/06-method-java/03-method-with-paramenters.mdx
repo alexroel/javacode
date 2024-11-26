@@ -1,0 +1,87 @@
+---
+title: Métodos con parámetros
+description: En Java, un método puede recibir uno o más parámetros. Un parámetro es un valor que se pasa a un método cuando se llama.
+---
+
+En Java, un método puede recibir uno o más parámetros. Un parámetro es un valor que se pasa a un método cuando se llama. Los parámetros se utilizan para pasar información al método. Un método puede tener cero o más parámetros. 
+
+## Sintaxis de un método con parámetros
+
+La sintaxis de un método con parámetros en Java es la siguiente:
+
+```java
+tipo_de_retorno nombre_del_metodo(tipo_de_dato nombre_del_parametro) {
+    // Cuerpo del método
+}
+```
+
+En nuestra clase `Aritmetica`, vamos a crear un método llamado `sumar` que reciba dos parámetros de tipo entero y imprima la suma de los dos números.
+
+```java
+public class Aritmetica {
+    // Método con parámetros
+    public void sumar(int a, int b) {
+        int resultado = a + b;
+        System.out.printf("La suma de %d y %d es %d\n", a, b, resultado);
+    }
+}
+```
+
+- `public`: Modificador de acceso.
+- `void`: Tipo de retorno del método.
+- `sumar`: Nombre del método.
+- `(int a, int b)`: Parámetros del método.
+- `int resultado = a + b;`: Cuerpo del método.
+
+## Probar el método con parámetros
+
+Para probar el método `sumar` de la clase `Aritmetica`, vamos a crear una clase `PruebaAritmetica` con un método `main` que cree un objeto de la clase `Aritmetica` y llame al método `sumar` con dos números.
+
+```java
+
+public class PruebaAritmetica {
+    public static void main(String[] args) {
+        // Crear un objeto de la clase Aritmetica
+        Aritmetica aritmetica = new Aritmetica();
+        // Llamar al método sumar
+        aritmetica.sumar(5, 3);
+    }
+}
+```
+
+Esta clase crea un objeto de la clase `Aritmetica` y llama al método `sumar` con dos números. A este método se le llama método de instancia porque se llama a través de un objeto.
+
+## Método estático
+
+Un método estático es un método que pertenece a la clase en lugar de a un objeto. Un método estático se puede llamar sin crear un objeto de la clase. Para definir un método estático, se utiliza la palabra clave `static`.
+
+**Método estático con parámetros**
+
+```java
+
+public class Aritmetica {
+    // Método estático con parámetros
+    public static void sumar(int a, int b) {
+        int resultado = a + b;
+        System.out.printf("La suma de %d y %d es %d\n", a, b, resultado);
+    }
+}
+```
+
+**Probar el método estático con parámetros**
+
+Para probar el método `sumar` de la clase `Aritmetica`, vamos a llamar al método `sumar` con dos números.
+
+```java
+
+public class PruebaAritmetica {
+    public static void main(String[] args) {
+        // Llamar al método sumar
+        Aritmetica.sumar(5, 3);
+    }
+}
+```
+
+En este caso, el método `sumar` es un método estático, por lo que se llama a través de la clase `Aritmetica` en lugar de un objeto de la clase.
+
+

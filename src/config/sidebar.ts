@@ -19,4 +19,8 @@ export const sidebar = [
         label: "Introducción a POO",
         autogenerate: { directory: "05-intro-poo" },
     },
+    {
+        label: "Métodos en Java",
+        autogenerate: { directory: "06-method-java" },
+    },
 ];

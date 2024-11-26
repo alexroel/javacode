@@ -1,0 +1,59 @@
+---
+title: Sobrecarga de métodos
+description: La sobrecarga de métodos es una característica de Java que permite definir varios métodos con el mismo nombre en una clase, siempre y cuando tengan diferentes listas de parámetros.
+---
+
+La sobrecarga de métodos es una característica de Java que permite definir varios métodos con el mismo nombre en una clase, siempre y cuando tengan diferentes listas de parámetros. Esto significa que puedes tener varios métodos con el mismo nombre pero con diferentes tipos de parámetros o diferentes cantidades de parámetros. 
+
+## Sintaxis de la sobrecarga de métodos
+
+La sintaxis de la sobrecarga de métodos es la siguiente:
+
+```java
+tipo_de_retorno nombre_del_metodo(parametros) {
+    // Cuerpo del método
+}
+
+tipo_de_retorno nombre_del_metodo(parametros) {
+    // Cuerpo del método
+}
+```
+
+## Ejemplo de sobrecarga de métodos
+
+En nuestra clase `Aritmetica`, vamos a crear dos métodos llamados `sumar` que reciban diferentes tipos de parámetros.
+
+```java
+
+public class Aritmetica {
+    // Método con dos parámetros de tipo entero
+    static int sumar(int a, int b) {
+        int resultado = a + b;
+        return resultado;
+    }
+
+    // Método con tres parámetros de tipo entero
+    static double sumar(int a, int b) {
+        double resultado = a + b;
+        return resultado;
+    }
+}
+```
+
+## Probar la sobrecarga de métodos
+
+Para probar la sobrecarga de métodos de la clase `Aritmetica`, vamos a crear una clase `PruebaAritmetica` con un método `main` que cree un objeto de la clase `Aritmetica` y llame a los métodos `sumar` con diferentes tipos de parámetros.
+
+```java
+
+public class PruebaAritmetica {
+    public static void main(String[] args) {
+        int resultado1 = Aritmetica.sumar(5, 3);
+        double resultado2 = Aritmetica.sumar(5.5, 3.7);
+        System.out.println("El resultado de enteros: " + resultado1);
+        System.out.println("El resultado de decimales: " + resultado2);
+    }
+}
+```
+
+Esta clase crea un objeto de la clase `Aritmetica` y llama a los métodos `sumar` con diferentes tipos de parámetros. A este método se le llama método estático porque se llama a través de la clase en lugar de un objeto.

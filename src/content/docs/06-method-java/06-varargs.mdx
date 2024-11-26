@@ -1,0 +1,86 @@
+---
+title: Métodos con varargs
+description: Métodos con varargs en Java y cómo usarlos en tus programas Java
+---
+
+En Java, los métodos con varargs son una característica que te permite pasar un número variable de argumentos a un método. La palabra clave `varargs` es una abreviatura de "argumentos variables". Esto significa que puedes pasar un número variable de argumentos a un método sin tener que especificar la cantidad exacta de argumentos.
+
+## Sintaxis de un método con varargs
+
+La sintaxis de un método con varargs es la siguiente:
+
+```java
+public void methodName(Type... variableName) {
+    // Código del método
+}
+```
+
+En esta sintaxis, `Type` es el tipo de datos de los argumentos que se pueden pasar al método, y `variableName` es el nombre de la variable que se utilizará para acceder a los argumentos dentro del método.
+
+## Ejemplo de un método con varargs
+
+Para nuestra clase `Aritmetica` vamos a crear un método llamado `sumar` que acepta un número variable de argumentos y devuelve la suma de todos los argumentos. Aquí está el código de la clase `Aritmetica` con el método `sumar`:
+
+```java
+
+public class Aritmetica {
+
+    static int sumar(int... numeros) {
+        int suma = 0;
+        for (int numero : numeros) {
+            suma += numero;
+        }
+        return suma;
+    }
+}
+```
+
+En este ejemplo, el método `sumar` acepta un número variable de argumentos de tipo `int` y devuelve la suma de todos los argumentos. Dentro del método, utilizamos un bucle `for-each` para sumar todos los argumentos y devolver el resultado.
+
+## Llamando
+
+Ahora podemos llamar al método `sumar` con cualquier número de argumentos que queramos. Aquí hay un ejemplo de cómo llamar al método `sumar` con tres argumentos:
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        int resultado = Aritmetica.sumar(1, 2, 3);
+        System.out.println("La suma es: " + resultado);
+    }
+}
+```
+
+En este ejemplo, llamamos al método `sumar` con los argumentos `1`, `2` y `3`, y almacenamos el resultado en una variable llamada `resultado`. Luego imprimimos el resultado en la consola.
+
+## Sobrecarga de métodos
+
+Es importante tener en cuenta que los métodos con varargs pueden ser sobrecargados. Esto significa que puedes tener varios métodos con el mismo nombre pero con diferentes números de argumentos. Aquí hay un ejemplo de cómo sobrecargar el método `sumar`:
+
+```java
+
+public class Aritmetica {
+
+    static int sumar(int... numeros) {
+        int suma = 0;
+        for (int numero : numeros) {
+            suma += numero;
+        }
+        return suma;
+    }
+
+    static double sumar(double... numeros) {
+        double suma = 0;
+        for (double numero : numeros) {
+            suma += numero;
+        }
+        return suma;
+    }
+}
+```
+
+En este ejemplo, hemos sobrecargado el método `sumar` para aceptar argumentos de tipo `int` y `double`. Ahora podemos llamar al método `sumar` con argumentos de tipo `int` o `double` y obtener el resultado correcto.
+
+
+
+

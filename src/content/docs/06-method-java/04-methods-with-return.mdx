@@ -1,0 +1,58 @@
+---
+title: Métodos con retorno
+description: Métodos con retorno en Java y cómo usarlos en tus programas Java 
+---
+
+En Java, los métodos pueden devolver un valor. Este valor devuelto se conoce como el tipo de retorno del método.
+
+## Sintaxis de un método con retorno
+
+La sintaxis de un método con retorno es la siguiente:
+
+```java
+tipo_de_retorno nombre_del_metodo(parametros) {
+    // Cuerpo del método
+    return valor_a_devolver;
+}
+```
+
+Nuestro método puede devolver cualquier tipo de dato, incluso objetos. Si el método no devuelve ningún valor, se debe usar el tipo de dato `void`. 
+
+## Ejemplo de un método con retorno
+En nuestra clase `Aritmetica`, vamos a crear un método llamado `sumar` que reciba dos parámetros de tipo entero y devuelva la suma de los dos números.
+
+```java
+
+public class Aritmetica {
+    // Método con retorno
+    static int sumar(int a, int b) {
+        int resultado = a + b;
+        return resultado;
+    }
+}
+```
+
+- `public`: Modificador de acceso.
+- `static`: Palabra clave que indica que el método es estático.
+- `int`: Tipo de retorno del método.
+- `sumar`: Nombre del método.
+- `(int a, int b)`: Parámetros del método.
+- `int resultado = a + b;`: Cuerpo del método.
+- `return resultado;`: Devuelve el valor de la variable `resultado`.
+
+## Probar el método con retorno
+
+Para probar el método `sumar` de la clase `Aritmetica`, vamos a crear una clase `PruebaAritmetica` con un método `main` que cree un objeto de la clase `Aritmetica` y llame al método `sumar` con dos números.
+
+```java
+
+public class PruebaAritmetica {
+    public static void main(String[] args) {
+        int resultado = Aritmetica.sumar(5, 3);
+        System.out.println("El resultado de la suma es: " + resultado);
+    }
+}
+```
+
+Esta clase crea un objeto de la clase `Aritmetica` y llama al método `sumar` con dos números. A este método se le llama método estático porque se llama a través de la clase en lugar de un objeto.
+
