@@ -1,0 +1,95 @@
+---
+title: Proyecto - Registro de Personas
+description: Crear un proyecto para registrar personas en un sistema de información.
+---
+
+Ahoara vamos a poner en práctica todo lo aprendido en este curso, vamos a crear un proyecto para registrar personas, en este proyecto vamos a utilizar todos los conceptos aprendidos en este curso, vamos a utilizar clases, objetos, métodos y atributos.
+
+## Requerimientos
+
+1. Crear una clase `Persona` con los siguientes atributos:
+    - Nombre
+    - Edad
+
+2. Desde la clase `Main` vamos instanciar la clase `Persona` y vamos a registrar a 3 personas.
+    - Crea un arreglo de personas para registrar 3 personas.
+    - Luego usa un bucle para registrar a las 3 personas.
+    - Muestra en pantalla los datos de las 3 personas registradas.
+
+## Solución
+
+```java
+public class Persona {
+    String nombre;
+    int edad;
+
+    // Constructor por defecto
+    public Persona() {
+        this.nombre = "Sin nombre";
+        this.edad = 0;
+    }
+
+    // Constructor con un parámetro
+    public Persona(String nombre) {
+        this.nombre = nombre;
+        this.edad = 0;
+    }
+
+    // Constructor con dos parámetros
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public void saludar() {
+        System.out.printf("Hola, mi nombre es %s y tengo %d años\n", nombre, edad);
+    }
+}
+
+```
+
+```java
+import java.util.Scanner;
+
+public class HolaMundo {
+    public static void main(String[] args) {
+
+        System.out.println("Registra personas");
+        System.out.println("=================================");
+        var leer = new Scanner(System.in);
+
+        // Para un lista de 5 persona
+        Persona[] personas = new Persona[3];
+
+        var cantRegistro = 0;
+
+        while (cantRegistro < personas.length){
+
+            System.out.print("Ingrese el nombre de la persona: ");
+            var nombre = leer.nextLine();
+
+            System.out.print("Ingrese la edad de la persona: ");
+            var edad = Integer.parseInt(leer.nextLine());
+            System.out.println("---------------------------------");
+
+
+            personas[cantRegistro] = new Persona(nombre, edad);
+            cantRegistro++;
+        }
+
+        System.out.println("Listado de Personas");
+        System.out.println("=================================");
+
+        for (var persona : personas) {
+            System.out.printf("-> Nombre: %s - Edad: %d %n", persona.nombre, persona.edad);
+        }
+    }
+}
+
+```
+
+Felicitaciones, has terminado el curso de Programación Orientada a Objetos en Java, ahora puedes crear tus propios proyectos utilizando los conceptos aprendidos en este curso.
+
+
+
+

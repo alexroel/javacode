@@ -1,0 +1,53 @@
+---
+title: Clases y Objetos en Java
+description: En esta sección aprenderás cómo definir clases y objetos en Java y cómo interactuar con ellos para crear programas orientados a objetos.
+---
+
+Una clase es una plantilla o molde que define la estructura y el comportamiento de los objetos. En otras palabras, una clase es un modelo abstracto que define los atributos y métodos que tendrán los objetos de esa clase.
+
+## Una clase en Java
+
+En Java, una clase se define utilizando la palabra clave `class`, seguida del nombre de la clase y el cuerpo de la clase entre llaves `{}`. Aquí tienes un ejemplo de una clase `Persona` en Java:
+
+```java
+
+public class Persona {
+    // Atributos
+    String nombre;
+    int edad;
+
+    // Métodos
+    public void saludar() {
+        System.out.printf("Hola, mi nombre es %s y tengo %d años\n", nombre, edad);
+    }
+}
+```
+
+En este ejemplo, la clase `Persona` tiene dos atributos (`nombre` y `edad`) y un método (`saludar`). Los atributos representan las características de un objeto de la clase `Persona`, mientras que el método `saludar` representa un comportamiento que puede realizar un objeto de la clase `Persona`.
+
+## Crear objetos en Java
+
+Una vez que has definido una clase en Java, puedes crear objetos (instancias) de esa clase utilizando la palabra clave `new`. Aquí tienes un ejemplo de cómo crear un objeto de la clase `Persona`:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Crear un objeto de la clase Persona
+        Persona persona1 = new Persona();
+
+        // Asignar valores a los atributos del objeto
+        persona1.nombre = "Juan";
+        persona1.edad = 30;
+
+        // Llamar al método saludar del objeto
+        persona1.saludar();
+    }
+}
+```
+
+En este ejemplo, creamos un objeto `persona1` de la clase `Persona` y asignamos valores a sus atributos (`nombre` y `edad`). Luego, llamamos al método `saludar` del objeto `persona1`, que imprime un saludo con el nombre y la edad de la persona.
+
+## Resumen
+
+- Una clase en Java es una plantilla que define la estructura y el comportamiento de los objetos.
+

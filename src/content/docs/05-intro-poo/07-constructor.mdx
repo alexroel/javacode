@@ -1,0 +1,110 @@
+---
+title: Constructores en Java
+description: En esta sección aprenderás qué son los constructores en Java, cómo se definen y cómo se utilizan en tus clases.
+---
+
+Un constructor en Java es un método especial que se utiliza para inicializar un objeto de una clase. Los constructores tienen el mismo nombre que la clase y no tienen tipo de retorno. Se utilizan para asignar valores iniciales a los atributos de un objeto cuando se crea una instancia de la clase.
+
+## Definición de un constructor
+
+En Java, un constructor se define utilizando la palabra clave `public`, seguida del nombre de la clase y una lista de parámetros (opcional) entre paréntesis `()`. Aquí tienes un ejemplo de un constructor en Java:
+
+```java
+public class Persona {
+    String nombre;
+    int edad;
+
+    // Constructor
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public void saludar() {
+        System.out.printf("Hola, mi nombre es %s y tengo %d años\n", nombre, edad);
+    }
+}
+```
+
+En este ejemplo, la clase `Persona` tiene un constructor que recibe dos parámetros (`nombre` y `edad`) y asigna los valores a los atributos de la clase. El constructor se llama automáticamente cuando se crea un objeto de la clase `Persona`.
+
+## Llamar a un constructor
+
+Para llamar a un constructor en Java, utilizamos la palabra clave `new` seguida del nombre de la clase y los argumentos del constructor entre paréntesis `()`. Aquí tienes un ejemplo de cómo llamar al constructor de la clase `Persona`:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Llamar al constructor de la clase Persona
+        Persona persona1 = new Persona("Juan", 30);
+
+        // Llamar al método saludar del objeto
+        persona1.saludar();
+    }
+}
+```
+
+En este ejemplo, creamos un objeto `persona1` de la clase `Persona` y llamamos al constructor de la clase con los valores `"Juan"` y `30` para los parámetros `nombre` y `edad`, respectivamente. Luego, llamamos al método `saludar` del objeto `persona1`, que imprime un saludo con el nombre y la edad de la persona.
+
+## Constructores por defecto
+
+Si no defines un constructor en una clase en Java, se crea automáticamente un constructor por defecto sin parámetros. Este constructor inicializa los atributos de la clase con valores predeterminados (por ejemplo, `null` para cadenas, `0` para enteros, `0.0` para decimales, etc.). Aquí tienes un ejemplo de un constructor por defecto en Java:
+
+```java
+
+public class Persona {
+    String nombre;
+    int edad;
+
+    // Constructor por defecto
+    public Persona() {
+        this.nombre = "Sin nombre";
+        this.edad = 0;
+    }
+
+    public void saludar() {
+        System.out.printf("Hola, mi nombre es %s y tengo %d años\n", nombre, edad);
+    }
+}
+```
+
+En este ejemplo, la clase `Persona` tiene un constructor por defecto que inicializa los atributos `nombre` y `edad` con los valores `"Sin nombre"` y `0`, respectivamente. Si creas un objeto de la clase `Persona` sin pasar argumentos al constructor, se utilizarán los valores predeterminados del constructor por defecto.
+
+## Sobrecarga de constructores
+
+En Java, puedes definir múltiples constructores en una clase utilizando la técnica de sobrecarga de métodos. La sobrecarga de constructores te permite crear diferentes versiones del constructor con diferentes listas de parámetros. Aquí tienes un ejemplo de sobrecarga de constructores en Java:
+
+```java
+public class Persona {
+    String nombre;
+    int edad;
+
+    // Constructor por defecto
+    public Persona() {
+        this.nombre = "Sin nombre";
+        this.edad = 0;
+    }
+
+    // Constructor con un parámetro
+    public Persona(String nombre) {
+        this.nombre = nombre;
+        this.edad = 0;
+    }
+
+    // Constructor con dos parámetros
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public void saludar() {
+        System.out.printf("Hola, mi nombre es %s y tengo %d años\n", nombre, edad);
+    }
+}
+```
+
+En este ejemplo, la clase `Persona` tiene tres constructores: un constructor por defecto sin parámetros, un constructor con un parámetro (`nombre`) y un constructor con dos parámetros (`nombre` y `edad`). Puedes llamar a cualquiera de estos constructores según tus necesidades al crear un objeto de la clase `Persona`.
+
+
+
+
